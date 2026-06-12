@@ -348,7 +348,16 @@
       border-radius: 20px;
       padding: 28px 24px;
       margin-bottom: 16px;
+      position: relative;
+      overflow: hidden;
     }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(15,12,41,0.20);
+    }
+    .cta-section > * { position: relative; z-index: 1; }
     .cta-section h3 {
       font-size: 20px;
       font-weight: 900;
