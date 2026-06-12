@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free FL Real Estate Exam Diagnostic Quiz — GatorPrep RE</title>
+  <meta name="description" content="Take our free 18-question Florida real estate exam diagnostic quiz. Find your weak spots across 9 key subject areas. No email required." />
+  <meta property="og:title" content="Free FL Real Estate Exam Diagnostic Quiz — GatorPrep RE" />
+  <meta property="og:description" content="Not sure where you stand? Take this free 18-question Florida FREC diagnostic quiz and find out exactly which exam topics need the most work." />
+  <meta property="og:image" content="https://gatorprepre.com/icon.png" />
+  <link rel="canonical" href="https://gatorprepre.com/quiz.html" />
+  <link rel="icon" href="icon.png" />
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0F0C29;
+      color: #ffffff;
+      min-height: 100vh;
+    }
+
+    /* ── Nav ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 28px;
+      background: rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .nav-icon { width: 32px; height: 32px; border-radius: 7px; }
+    .nav-name { font-size: 17px; font-weight: 800; color: #ffffff; }
+    .nav-name span { color: #F0A020; }
+    .nav-back {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .nav-back:hover { color: #ffffff; }
+
+    /* ── Intro screen ── */
+    #intro {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 60px 28px;
+      text-align: center;
+    }
+    .intro-icon {
+      width: 100px;
+      height: 100px;
+      border-radius: 22px;
+      margin-bottom: 24px;
+      filter: drop-shadow(0 4px 16px rgba(0,0,0,0.3));
+    }
+    #intro h1 {
+      font-size: clamp(26px, 5vw, 38px);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    #intro h1 span { color: #F0A020; }
+    #intro p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+    .intro-pills {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 24px 0 32px;
+    }
+    .intro-pill {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 7px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.75);
+    }
+
+    /* ── Quiz screen ── */
+    #quiz { display: none; max-width: 640px; margin: 0 auto; padding: 32px 24px 60px; }
+
+    .progress-bar-wrap {
+      background: rgba(255,255,255,0.08);
+      border-radius: 4px;
+      height: 6px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #E84B8A, #F09040, #00D4B8);
+      border-radius: 4px;
+      transition: width 0.4s ease;
+    }
+    .progress-label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.40);
+      font-weight: 600;
+      text-align: right;
+      margin-bottom: 24px;
+    }
+
+    /* Streak banner */
+    .streak-banner {
+      display: none;
+      background: linear-gradient(135deg, #E84B8A, #F0557A);
+      border-radius: 12px;
+      padding: 10px 18px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 15px;
+      font-weight: 800;
+      color: #ffffff;
+      animation: streakPop 0.4s ease;
+    }
+    @keyframes streakPop {
+      0% { transform: scale(0.85); opacity: 0; }
+      70% { transform: scale(1.04); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .streak-banner.visible { display: block; }
+
+    .topic-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: #00D4B8;
+      background: rgba(0,212,184,0.12);
+      border: 1px solid rgba(0,212,184,0.25);
+      border-radius: 20px;
+      padding: 4px 12px;
+      margin-bottom: 16px;
+    }
+
+    .question-text {
+      font-size: clamp(17px, 3vw, 22px);
+      font-weight: 700;
+      line-height: 1.45;
+      margin-bottom: 28px;
+      color: #ffffff;
+    }
+
+    .options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+    .option-btn {
+      background: rgba(255,255,255,0.06);
+      border: 1.5px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      padding: 14px 18px;
+      text-align: left;
+      font-size: 15px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s, transform 0.1s;
+      width: 100%;
+    }
+    .option-btn:hover:not(:disabled) {
+      background: rgba(255,255,255,0.10);
+      border-color: rgba(255,255,255,0.25);
+      transform: translateY(-1px);
+    }
+    .option-btn.correct {
+      background: rgba(74,222,128,0.15);
+      border-color: #4ADE80;
+      color: #4ADE80;
+    }
+    .option-btn.incorrect {
+      background: rgba(248,113,113,0.15);
+      border-color: #F87171;
+      color: #F87171;
+    }
+    .option-btn.reveal {
+      background: rgba(74,222,128,0.08);
+      border-color: rgba(74,222,128,0.30);
+      color: rgba(255,255,255,0.50);
+    }
+
+    /* Explanation box */
+    .explanation-box {
+      display: none;
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      line-height: 1.65;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .explanation-box.correct-box {
+      background: rgba(74,222,128,0.08);
+      border: 1px solid rgba(74,222,128,0.20);
+    }
+    .explanation-box.incorrect-box {
+      background: rgba(248,113,113,0.08);
+      border: 1px solid rgba(248,113,113,0.20);
+    }
+    .explanation-box .verdict {
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .explanation-box.correct-box .verdict { color: #4ADE80; }
+    .explanation-box.incorrect-box .verdict { color: #F87171; }
+    .explanation-box .explanation-text { color: rgba(255,255,255,0.70); }
+    .explanation-box.visible { display: block; }
+
+    .next-btn {
+      width: 100%;
+      background: #F0A020;
+      color: #1A1A2E;
+      font-size: 16px;
+      font-weight: 800;
+      padding: 15px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      display: none;
+      transition: opacity 0.15s, transform 0.1s;
+    }
+    .next-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .next-btn.visible { display: block; }
+
+    /* ── Results screen ── */
+    #results {
+      display: none;
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+      text-align: center;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    .shimmer-wrap {
+      display: inline-block;
+      background: linear-gradient(90deg,
+        rgba(255,255,255,0.03) 0%,
+        rgba(255,255,255,0.12) 50%,
+        rgba(255,255,255,0.03) 100%);
+      background-size: 200% auto;
+      animation: shimmer 2.5s linear infinite;
+      border-radius: 20px;
+      padding: 32px 40px;
+      margin-bottom: 28px;
+      width: 100%;
+    }
+
+    .result-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 18px;
+      margin-bottom: 16px;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+    }
+    .score-display {
+      font-size: clamp(48px, 10vw, 72px);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .score-display.high { color: #4ADE80; }
+    .score-display.low { color: #F0A020; }
+    .score-sub {
+      font-size: 16px;
+      color: rgba(255,255,255,0.55);
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+
+    .result-message {
+      font-size: 17px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.65;
+      margin-bottom: 32px;
+      max-width: 460px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Topic breakdown */
+    .breakdown-title {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.40);
+      margin-bottom: 14px;
+      text-align: left;
+    }
+    .topic-results { display: flex; flex-direction: column; gap: 8px; margin-bottom: 36px; text-align: left; }
+    .topic-result-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 12px 16px;
+    }
+    .topic-result-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.85);
+    }
+    .topic-result-score {
+      font-size: 13px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+    .topic-result-score.perfect {
+      background: rgba(74,222,128,0.15);
+      color: #4ADE80;
+    }
+    .topic-result-score.partial {
+      background: rgba(240,160,32,0.15);
+      color: #F0A020;
+    }
+    .topic-result-score.zero {
+      background: rgba(248,113,113,0.15);
+      color: #F87171;
+    }
+
+    .cta-section {
+      background: linear-gradient(135deg, #E84B8A, #F0557A, #F09040, #F5C040);
+      border-radius: 20px;
+      padding: 28px 24px;
+      margin-bottom: 16px;
+    }
+    .cta-section h3 {
+      font-size: 20px;
+      font-weight: 900;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+    .cta-section p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.80);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .cta-btn {
+      display: block;
+      background: #00D4B8;
+      color: #1A1A2E;
+      font-size: 16px;
+      font-weight: 800;
+      padding: 15px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: opacity 0.15s;
+      margin-bottom: 12px;
+    }
+    .cta-btn:hover { opacity: 0.88; }
+    .retake-btn {
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.40);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: underline;
+      padding: 8px;
+    }
+    .retake-btn:hover { color: rgba(255,255,255,0.70); }
+
+    /* ── Shared button ── */
+    .start-btn {
+      display: inline-block;
+      background: #F0A020;
+      color: #1A1A2E;
+      font-size: 17px;
+      font-weight: 800;
+      padding: 16px 40px;
+      border-radius: 14px;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.15s, transform 0.1s;
+      box-shadow: 0 4px 20px rgba(240,160,32,0.35);
+    }
+    .start-btn:hover { opacity: 0.88; transform: translateY(-2px); }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 20px 28px;
+      text-align: center;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .footer-links a:hover { color: rgba(255,255,255,0.70); }
+    .footer-copy { font-size: 11px; color: rgba(255,255,255,0.20); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="/">
+      <img class="nav-icon" src="icon.png" alt="GatorPrep RE" />
+      <span class="nav-name">GatorPrep <span>RE</span></span>
+    </a>
+    <a class="nav-back" href="/">← Back to Home</a>
+  </nav>
+
+  <!-- ── Intro ── -->
+  <div id="intro">
+    <img class="intro-icon" src="icon.png" alt="GatorPrep RE" />
+    <h1>Free FL Real Estate<br><span>Diagnostic Quiz</span></h1>
+    <p>Not sure how ready you are for the Florida real estate exam? This 18-question diagnostic quiz spans 9 key subject areas from the Florida real estate exam and gives you an honest snapshot of where you currently stand.</p>
+    <p>When you're done, you'll see a topic-by-topic breakdown so you know exactly where to focus your studying.</p>
+    <div class="intro-pills">
+      <span class="intro-pill">18 questions</span>
+      <span class="intro-pill">9 subject areas</span>
+      <span class="intro-pill">Instant results</span>
+      <span class="intro-pill">No email needed</span>
+    </div>
+    <button class="start-btn" onclick="startQuiz()">Start the Quiz →</button>
+    <p style="margin-top:14px; font-size:13px; color:rgba(255,255,255,0.35);">Free · No sign-up · Takes about 4 minutes</p>
+  </div>
+
+  <!-- ── Quiz ── -->
+  <div id="quiz">
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-fill" id="progressFill" style="width: 0%"></div>
+    </div>
+    <div class="progress-label" id="progressLabel">Question 1 of 18</div>
+
+    <div class="streak-banner" id="streakBanner"></div>
+
+    <div class="topic-tag" id="topicTag"></div>
+    <div class="question-text" id="questionText"></div>
+    <div class="options" id="optionsContainer"></div>
+    <div class="explanation-box" id="explanationBox">
+      <div class="verdict" id="verdictText"></div>
+      <div class="explanation-text" id="explanationText"></div>
+    </div>
+    <button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next Question →</button>
+  </div>
+
+  <!-- ── Results ── -->
+  <div id="results">
+    <div id="scoreWrap">
+      <img class="result-icon" src="icon.png" alt="GatorPrep RE" id="resultIcon" />
+      <div class="score-display" id="scoreDisplay"></div>
+      <div class="score-sub" id="scoreSub"></div>
+    </div>
+    <p class="result-message" id="resultMessage"></p>
+
+    <div class="breakdown-title">Your Topic Breakdown</div>
+    <div class="topic-results" id="topicBreakdown"></div>
+
+    <div class="cta-section">
+      <h3>Ready to go deeper? 🐊</h3>
+      <p>GatorPrep RE has 1,900+ Florida-specific questions, full practice exams, flashcards, and a timed simulation — everything you need to pass on the first try.</p>
+      <a class="cta-btn" href="https://apps.apple.com/app/id6772942254" target="_blank">⬇ Download GatorPrep RE — Free</a>
+      <button class="retake-btn" onclick="retakeQuiz()">Retake the diagnostic</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="https://apps.apple.com/app/id6772942254" target="_blank">App Store</a>
+    </div>
+    <div class="footer-copy">© 2026 Ivy Wisner · GatorPrep RE · Florida Real Estate Exam Prep</div>
+  </footer>
+
+  <script>
+    // ── Question bank — 4 per topic, 2 randomly selected each quiz ──────────────
+    const BANK = {
+      license_law: {
+        label: 'License Law & FREC',
+        questions: [
+          {
+            q: 'Before sitting for the Florida sales associate licensing exam, an applicant must complete how many hours of FREC-approved pre-licensing education?',
+            options: ['45 hours', '40 hours', '63 hours', '72 hours'],
+            correct: 2,
+            explanation: 'Florida requires a 63-hour FREC-approved pre-licensing course before taking the state exam. The 72-hour requirement applies to broker pre-licensing.'
+          },
+          {
+            q: 'Before their first license renewal, a Florida sales associate must complete how many hours of post-licensing education?',
+            options: ['14 hours', '45 hours', '63 hours', '30 hours'],
+            correct: 1,
+            explanation: 'Florida requires 45 hours of FREC-approved post-licensing education before the first renewal. Failure results in the license becoming void — not merely expired.'
+          },
+          {
+            q: 'The maximum amount a claimant may recover from the Real Estate Recovery Fund for a single real estate transaction is:',
+            options: ['$25,000', '$50,000', '$75,000', '$100,000'],
+            correct: 1,
+            explanation: 'The Recovery Fund pays a maximum of $50,000 per transaction regardless of the actual judgment amount. The aggregate lifetime maximum for claims against a single licensee is $150,000.'
+          },
+          {
+            q: 'What is the key distinction between license suspension and license revocation as FREC disciplinary penalties?',
+            options: ['Suspension applies to sales associates; revocation applies only to brokers', 'Suspension is temporary — the license is inactive for a set period — while revocation permanently terminates the license', 'Revocation is imposed only for criminal convictions; suspension for administrative violations', 'Suspension requires a formal DOAH hearing; revocation can be imposed through an informal proceeding'],
+            correct: 1,
+            explanation: 'A suspended license is temporarily inactive. Once the suspension ends, the licensee may return to practice. Revocation permanently terminates the license — a former licensee must reapply and meet all current requirements.'
+          },
+        ]
+      },
+      brokerage_relationships: {
+        label: 'Brokerage Relationships',
+        questions: [
+          {
+            q: 'A brokerage relationship in which the licensee owes full fiduciary duties to one principal — acting solely in that principal\'s best interest — is called a:',
+            options: ['Transaction broker relationship', 'No brokerage relationship', 'Single agent relationship', 'Designated sales associate relationship'],
+            correct: 2,
+            explanation: 'In a single agent relationship, the licensee is a fiduciary for one principal, owing the full OLDCAR duties: Obedience, Loyalty, Disclosure, Confidentiality, Accounting, and Reasonable care. This is the highest level of representation available under Florida law.'
+          },
+          {
+            q: 'Which of the following is NOT one of the seven duties owed by a Florida transaction broker?',
+            options: ['Loyalty to the principal', 'Deal honestly and fairly with all parties', 'Account for all funds', 'Disclose all known facts materially affecting value'],
+            correct: 0,
+            explanation: 'Loyalty is a fiduciary duty owed only in a single agent relationship. A transaction broker\'s seven duties do not include loyalty — limited confidentiality replaces it.'
+          },
+          {
+            q: 'Which of the following is most likely to qualify as a material fact that a Florida licensee must disclose to a buyer?',
+            options: ['The seller\'s divorce is prompting a quick sale', 'A persistent roof leak that has caused structural damage in the attic', 'The neighbor\'s loud parties on weekend evenings', 'The seller\'s religion or nationality'],
+            correct: 1,
+            explanation: 'A material fact is any known condition that materially affects the value or desirability of the property. A structural defect is a classic material fact. The seller\'s personal circumstances and neighborhood nuisances that are not physical defects of the property do not qualify.'
+          },
+          {
+            q: 'A transaction broker is assisting both the buyer and seller. The buyer mentions he must close within 30 days due to a job relocation and will accept almost any reasonable counteroffer. The transaction broker must:',
+            options: ['Keep this information confidential and not share it with the seller', 'Immediately disclose this to the seller because it is a material fact about the buyer', 'Disclose it to the seller only if the seller asks about the buyer\'s motivation', 'Include it in the transaction file for both parties to review'],
+            correct: 0,
+            explanation: 'Under a transaction broker relationship, the limited confidentiality duty prohibits disclosing a party\'s motivation, urgency, or willingness to accept different terms. The buyer\'s relocation deadline is exactly the type of information this duty protects.'
+          },
+        ]
+      },
+      brokerage_operations: {
+        label: 'Brokerage Operations',
+        questions: [
+          {
+            q: 'Under Florida\'s real estate license law, what must all real estate advertising include at minimum?',
+            options: ['The sales associate\'s name, phone number, and license number', 'The broker\'s license number and the brokerage\'s physical address', 'The full legal name of the brokerage and the broker\'s license number', 'The name of the brokerage under which the licensee operates'],
+            correct: 3,
+            explanation: 'Under Chapter 475 and Rule 61J2-10.025, all advertising by a licensee must include the name of the registered brokerage. A sales associate cannot advertise independently without the brokerage name.'
+          },
+          {
+            q: 'Under Florida law, within how many business days must a broker deposit earnest money into an escrow account after receiving it?',
+            options: ['Three business days from the date of receipt', 'One business day from the date of receipt', 'Five business days from the date of contract execution', 'Two business days from the date the offer is accepted'],
+            correct: 0,
+            explanation: 'Under Rule 61J2-14.010, a broker must place escrow funds in a Florida-regulated financial institution within three business days of receipt. This is one of the most frequently tested escrow rules on the Florida exam.'
+          },
+          {
+            q: 'Which of the following best describes "commingling" in the context of Florida real estate escrow accounts?',
+            options: ['Transferring escrow funds between two separate trust accounts without written authorization', 'Mixing a client\'s escrow funds with the broker\'s personal or operating funds', 'Depositing funds from multiple clients into the same trust account', 'Using escrow funds to pay for property maintenance before closing'],
+            correct: 1,
+            explanation: 'Commingling is the illegal practice of mixing client escrow funds with the broker\'s personal or business funds. Depositing multiple clients\' funds into the same properly maintained trust account is standard and permissible.'
+          },
+          {
+            q: 'A seller verbally agrees to pay a broker a 5% commission if the broker sells her home. The broker finds a buyer, the sale closes, and the seller refuses to pay. Under Florida law, which of the following is most accurate?',
+            options: ['The broker is entitled to the commission because verbal agreements are enforceable in Florida', 'The broker may be unable to recover the commission because Florida requires commission agreements to be in writing to be reliably enforceable', 'The broker is entitled to the full commission because they were the procuring cause of the sale', 'The broker may file a complaint with FREC, which will order the seller to pay the commission'],
+            correct: 1,
+            explanation: 'A commission agreement must be in writing to be reliably enforceable in Florida. A broker who relies on a verbal promise may be unable to recover it through legal action — which is why securing a signed listing agreement before performing services is essential.'
+          },
+        ]
+      },
+      florida_federal_laws: {
+        label: 'Florida & Federal Laws',
+        questions: [
+          {
+            q: 'Under the federal Fair Housing Act, which of the following best describes "blockbusting"?',
+            options: ['A lender\'s practice of refusing mortgage loans in neighborhoods with a high percentage of minority residents', 'The illegal practice of inducing homeowners to sell by warning them that members of a protected class are moving into the neighborhood', 'The practice of directing buyers toward or away from certain neighborhoods based on their race or national origin', 'A developer\'s practice of building affordable housing in established neighborhoods to change their demographic composition'],
+            correct: 1,
+            explanation: 'Blockbusting (also called panic selling) occurs when a real estate professional induces property owners to sell by making representations about the entry of persons of a protected class into the neighborhood. It violates the Fair Housing Act regardless of whether the representations are true.'
+          },
+          {
+            q: 'Under the federal Fair Housing Act, when a tenant with a disability requests that a no-pets policy be waived to allow a service animal, this request is best characterized as:',
+            options: ['A reasonable modification that the landlord must approve at the tenant\'s expense', 'A reasonable accommodation that the landlord must provide at no cost to the tenant', 'An optional accommodation that the landlord may approve at its sole discretion', 'A modification that must be approved by HUD before the landlord can grant or deny it'],
+            correct: 1,
+            explanation: 'Allowing a service animal is a reasonable accommodation — a change in rules or policies to provide equal opportunity to a person with a disability. Unlike reasonable modifications (physical changes paid for by the tenant), accommodations involve policy changes and must be granted unless they create undue hardship.'
+          },
+          {
+            q: 'Under federal law, which of the following must a seller disclose when selling a pre-1978 residential property?',
+            options: ['Whether any family member living in the home tested positive for elevated blood lead levels', 'Any known lead-based paint hazards and provide the buyer with the EPA\'s lead paint information pamphlet', 'Whether the home was built before or after 1978, even if no specific hazards are known', 'The results of a lead paint inspection conducted within the past 12 months'],
+            correct: 1,
+            explanation: 'Title X requires sellers of pre-1978 residential properties to disclose known lead-based paint hazards and provide the EPA pamphlet "Protect Your Family from Lead in Your Home." Sellers are not required to test — only to disclose what they know.'
+          },
+          {
+            q: 'Under Florida law, every contract for the sale or lease of a residential building must include:',
+            options: ['A radon gas disclosure statement notifying the buyer or tenant that radon is a naturally occurring radioactive gas', 'A lead paint disclosure form regardless of when the building was constructed', 'A disclosure of the seller\'s or landlord\'s knowledge of any prior tenant\'s health issues', 'A statement confirming that the property has been tested for radon within the past two years'],
+            correct: 0,
+            explanation: 'Florida Statute 404.056 requires all contracts for sale or lease of any building to include a radon disclosure statement. This is Florida-specific — there is no equivalent federal mandate requiring a radon disclosure in every contract.'
+          },
+        ]
+      },
+      property_rights: {
+        label: 'Property Rights & Ownership',
+        questions: [
+          {
+            q: 'Which estate in land represents the most complete form of ownership, continues indefinitely, and carries no conditions or limitations on the owner\'s use?',
+            options: ['Fee simple absolute', 'Fee simple determinable', 'Life estate', 'Fee tail'],
+            correct: 0,
+            explanation: 'Fee simple absolute is the highest form of real property ownership — unlimited duration, fully inheritable, freely transferable, with no conditions that could cause forfeiture. Both fee simple determinable and fee simple subject to a condition subsequent carry restrictions that can defeat the interest.'
+          },
+          {
+            q: 'In Florida, which form of co-ownership is available exclusively to legally married spouses and provides protection against the individual debts of either spouse alone?',
+            options: ['Tenancy by the entireties', 'Joint tenancy with right of survivorship', 'Community property ownership', 'Marital tenancy in common'],
+            correct: 0,
+            explanation: 'Tenancy by the entireties is reserved for legally married couples in Florida. A creditor holding a judgment against only one spouse cannot force a sale or attach an enforceable lien during the marriage. Only a joint creditor of both spouses can reach the property.'
+          },
+          {
+            q: 'An easement that benefits a specific parcel of land and automatically transfers with that parcel when it is sold is known as:',
+            options: ['An easement in gross', 'A license', 'An easement appurtenant', 'An easement by prescription'],
+            correct: 2,
+            explanation: 'An easement appurtenant benefits a specific parcel (the dominant tenement) and burdens an adjacent parcel (the servient tenement). It runs with the land — automatically transferring to any new owner of the dominant tenement regardless of whether it\'s mentioned in the deed.'
+          },
+          {
+            q: 'A deed in which the grantor guarantees title against all defects — whether they arose before or during the grantor\'s period of ownership — is called a:',
+            options: ['Special warranty deed', 'General warranty deed', 'Quitclaim deed', 'Bargain and sale deed'],
+            correct: 1,
+            explanation: 'A general warranty deed provides the broadest protection — the grantor warrants title against all claims regardless of when they arose. It contains five covenants: seisin, quiet enjoyment, against encumbrances, further assurance, and warranty forever. It is the most common deed type in Florida residential transactions.'
+          },
+        ]
+      },
+      contracts: {
+        label: 'Contracts & Legal Descriptions',
+        questions: [
+          {
+            q: 'What are the four essential elements required for a valid real estate contract in Florida?',
+            options: ['Offer and acceptance, consideration, competent parties, and lawful object', 'Offer and acceptance, consideration, written form, and notarization', 'Written form, consideration, competent parties, and recording', 'Offer and acceptance, written form, lawful object, and competent parties'],
+            correct: 0,
+            explanation: 'The four essential elements of a valid contract are mutual assent (offer and acceptance), consideration, competent parties, and lawful object. Written form is not required for validity — it is required under the Statute of Frauds for the contract to be enforceable in court.'
+          },
+          {
+            q: 'For a real estate sales contract to be enforceable in Florida under the Statute of Frauds, which of the following is required?',
+            options: ['The agreement must be in writing and signed by the party against whom enforcement is sought', 'The contract must be notarized and witnessed by two disinterested parties', 'The contract must be recorded in the public records of the county where the property is located', 'Both parties must sign the contract in the physical presence of their attorneys'],
+            correct: 0,
+            explanation: 'Florida\'s Statute of Frauds requires a real estate contract to be in writing and signed by the party to be charged. Notarization, witnessing, and recording are not required for enforceability.'
+          },
+          {
+            q: 'A real estate contract contains the phrase "time is of the essence." What does this mean?',
+            options: ['All parties must complete their obligations as quickly as possible regardless of stated deadlines', 'All deadlines in the contract are binding, and failure to meet them may constitute a material breach', 'The buyer must provide proof of financing within 24 hours of receiving a mortgage commitment', 'The contract automatically expires if not acted upon within the stated time period'],
+            correct: 1,
+            explanation: '"Time is of the essence" makes all stated deadlines binding and material. A failure to meet a deadline when this clause is present may constitute a material breach, allowing the other party to terminate and potentially seek damages.'
+          },
+          {
+            q: 'How many sections are contained in a single township under the government survey system?',
+            options: ['36', '24', '16', '48'],
+            correct: 0,
+            explanation: 'A township is a 6-mile × 6-mile square subdivided into a 6×6 grid of 36 sections. Each section is one square mile (640 acres), so a full township contains 23,040 acres.'
+          },
+        ]
+      },
+      finance: {
+        label: 'Finance & Mortgages',
+        questions: [
+          {
+            q: 'Florida is classified as a lien theory state. What does this mean in the context of a mortgage transaction?',
+            options: ['The lender holds legal title to the property until the loan is fully repaid', 'Both the borrower and lender share equitable title until the final payment is made', 'The borrower retains legal title and the lender holds a lien against the property', 'The property is held in trust by a neutral third party until the loan is satisfied'],
+            correct: 2,
+            explanation: 'In Florida (a lien theory state), the mortgagor (borrower) retains legal title throughout the loan term. The lender holds only a security interest — a lien — against the property. Title theory states vest legal title in the lender until payoff.'
+          },
+          {
+            q: 'On a conventional loan, a borrower is generally required to purchase private mortgage insurance (PMI) when the loan-to-value ratio exceeds which threshold?',
+            options: ['80%', '75%', '85%', '90%'],
+            correct: 0,
+            explanation: 'PMI is required on conventional loans when the LTV exceeds 80% (down payment less than 20%). PMI protects the lender — not the borrower. Under the Homeowners Protection Act, borrowers can request cancellation once LTV reaches 80%, and it is automatically canceled at 78%.'
+          },
+          {
+            q: 'What type of foreclosure process is used in Florida?',
+            options: ['Strict foreclosure, in which the lender obtains title immediately upon default without a court sale', 'Nonjudicial foreclosure (power of sale), conducted outside the court system by a trustee', 'Hybrid foreclosure, in which the lender may choose between court or nonjudicial proceedings', 'Judicial foreclosure, requiring the lender to file suit and obtain a court order before the property may be sold'],
+            correct: 3,
+            explanation: 'Florida is a judicial foreclosure state. The lender must file a lawsuit, serve the borrower, and obtain a court judgment before the property can be sold at public auction. This process is typically slower than nonjudicial (power-of-sale) states.'
+          },
+          {
+            q: 'What are discount points?',
+            options: ['Fees charged by the lender as a penalty when the borrower pays off the loan before maturity', 'A percentage of the purchase price the buyer must pay at closing in addition to the down payment', 'Points assessed to compensate the lender for lending to a borrower with a lower credit score', 'Fees paid at closing — each equal to 1% of the loan amount — that reduce the mortgage interest rate'],
+            correct: 3,
+            explanation: 'One discount point = 1% of the loan amount. Discount points are prepaid interest paid at closing in exchange for a lower rate over the life of the loan. The borrower must stay in the loan long enough to recoup the upfront cost through lower monthly payments.'
+          },
+        ]
+      },
+      appraisal: {
+        label: 'Appraisal, Investment & Markets',
+        questions: [
+          {
+            q: 'The principle of substitution in real estate appraisal states that:',
+            options: ['A property\'s value increases when it is surrounded by higher-priced properties', 'A buyer will pay no more for a property than the cost of acquiring an equally desirable substitute', 'Property values change in response to anticipated future conditions in the market', 'The value added by any component equals only what it contributes to the whole property'],
+            correct: 1,
+            explanation: 'The principle of substitution is the foundation of all three appraisal approaches. A rational buyer will pay no more than the cost of acquiring a comparable alternative — whether through purchase, construction, or investment. It explains why comparable sales are central to value estimation.'
+          },
+          {
+            q: 'In the income approach using direct capitalization, the formula used to estimate a property\'s value is:',
+            options: ['Value = Net Operating Income × Capitalization Rate', 'Value = Effective Gross Income ÷ Vacancy Rate', 'Value = Gross Rent Multiplier × Capitalization Rate', 'Value = Net Operating Income ÷ Capitalization Rate'],
+            correct: 3,
+            explanation: 'Direct capitalization formula: V = I ÷ R (Value = NOI ÷ Cap Rate). For example, $50,000 NOI at a 5% cap rate = $1,000,000 value. The formula also rearranges to: Cap Rate = NOI ÷ Value (the IRV triangle).'
+          },
+          {
+            q: 'A real estate market is described as a "buyer\'s market" when:',
+            options: ['The majority of buyers are investors rather than owner-occupants', 'Supply of available properties exceeds demand from active buyers, resulting in longer days on market and greater buyer negotiating leverage', 'Mortgage interest rates fall below 5%, making financing accessible for all qualified buyers', 'More than 50% of active buyers are pre-approved for financing'],
+            correct: 1,
+            explanation: 'A buyer\'s market exists when available inventory exceeds active buyer demand. The resulting seller competition leads to longer days on market, list-to-sale ratios below 100%, seller concessions, and buyers having leverage to include contingencies without risking the deal.'
+          },
+          {
+            q: 'In real estate investing, "leverage" refers to:',
+            options: ['The investor\'s ability to negotiate a lower purchase price by offering cash with no financing contingency', 'The appreciation rate that exceeds the rate of inflation, creating real growth in purchasing power', 'Using borrowed capital to control a larger asset than could be purchased with cash alone, amplifying the rate of return on the investor\'s own money', 'The proportion of a property\'s value attributable to land rather than improvements'],
+            correct: 2,
+            explanation: 'Leverage uses debt to amplify returns. A $50,000 down payment controlling a $200,000 property means a $20,000 appreciation gives a 40% return on cash invested — vs. only 10% on an all-cash purchase. Leverage magnifies both gains and losses.'
+          },
+        ]
+      },
+      math_taxes: {
+        label: 'Math, Taxes & Planning',
+        questions: [
+          {
+            q: 'Florida property taxes are paid in arrears. At a residential closing, how is the current year\'s tax proration typically handled?',
+            options: ['The seller credits the buyer for the portion of the year the seller owned the property', 'The buyer credits the seller for taxes already paid that cover the post-closing period', 'No proration occurs — the buyer assumes full tax liability from the purchase date', 'The seller and buyer split the estimated taxes equally at closing'],
+            correct: 0,
+            explanation: 'Because Florida taxes are paid in arrears, the seller owes taxes for the days they owned the property but hasn\'t paid them yet. The seller credits the buyer at closing so the buyer has funds available when the full tax bill comes due.'
+          },
+          {
+            q: 'The term "ad valorem" tax means the tax is based on:',
+            options: ['The income the property generates', 'The assessed value of the property', 'The square footage of the property', 'The age of the property'],
+            correct: 1,
+            explanation: '"Ad valorem" is Latin for "according to value." Florida property taxes are calculated based on each property\'s assessed value, as determined by the county property appraiser.'
+          },
+          {
+            q: 'In Florida property tax terminology, one mill equals:',
+            options: ['One percent (1%) of the property\'s taxable value', 'One dollar of tax per $1,000 of taxable value', 'One tenth of one percent (0.1%) of the property\'s assessed value', 'One dollar of tax per $100 of taxable value'],
+            correct: 1,
+            explanation: 'A mill = $1 per $1,000 of taxable value, or $0.001 per dollar. To calculate annual taxes: multiply taxable value by the mill rate and divide by 1,000. For example, $150,000 taxable value at 20 mills = $3,000 annual tax.'
+          },
+          {
+            q: 'A "nonconforming use" (sometimes called a "grandfathered" use) exists when:',
+            options: ['A property use was lawful when established but became noncompliant after a zoning ordinance was later enacted — the use may continue but cannot be expanded', 'A property owner received a variance from the Board of Zoning Appeals to deviate from standard regulations', 'A developer received special permission from the planning commission to build a use not typically permitted in the zone', 'A property owner voluntarily chose to use their property in a way that doesn\'t conform to current zoning'],
+            correct: 0,
+            explanation: 'A nonconforming use arises when a previously legal use becomes noncompliant after zoning is changed. The use is grandfathered in but typically cannot be expanded, changed to a different nonconforming use, or rebuilt if substantially destroyed.'
+          },
+        ]
+      },
+    };
+
+    // ── State ────────────────────────────────────────────────────────────────────
+    let questions = [];
+    let current = 0;
+    let score = 0;
+    let streak = 0;
+    let answered = false;
+    let topicScores = {};
+
+    function shuffle(arr) {
+      const a = [...arr];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    function buildQuiz() {
+      questions = [];
+      topicScores = {};
+      Object.entries(BANK).forEach(([topicId, data]) => {
+        const picked = shuffle(data.questions).slice(0, 2);
+        picked.forEach(q => {
+          // Shuffle answer options, tracking new correct index
+          const indexed = q.options.map((opt, i) => ({ opt, originalIndex: i }));
+          const shuffledOpts = shuffle(indexed);
+          const newCorrect = shuffledOpts.findIndex(x => x.originalIndex === q.correct);
+          questions.push({
+            ...q,
+            options: shuffledOpts.map(x => x.opt),
+            correct: newCorrect,
+            topicId,
+            topicLabel: data.label
+          });
+        });
+        topicScores[topicId] = { label: data.label, correct: 0, total: 2 };
+      });
+      questions = shuffle(questions);
+    }
+
+    function startQuiz() {
+      buildQuiz();
+      current = 0;
+      score = 0;
+      streak = 0;
+      answered = false;
+      document.getElementById('intro').style.display = 'none';
+      document.getElementById('quiz').style.display = 'block';
+      renderQuestion();
+    }
+
+    function renderQuestion() {
+      answered = false;
+      const q = questions[current];
+      const total = questions.length;
+
+      document.getElementById('progressFill').style.width = ((current / total) * 100) + '%';
+      document.getElementById('progressLabel').textContent = `Question ${current + 1} of ${total}`;
+      document.getElementById('topicTag').textContent = q.topicLabel;
+      document.getElementById('questionText').textContent = q.q;
+
+      const container = document.getElementById('optionsContainer');
+      container.innerHTML = '';
+      q.options.forEach((opt, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.textContent = opt;
+        btn.onclick = () => selectAnswer(i);
+        container.appendChild(btn);
+      });
+
+      const expBox = document.getElementById('explanationBox');
+      expBox.className = 'explanation-box';
+      document.getElementById('nextBtn').className = 'next-btn';
+      document.getElementById('streakBanner').className = 'streak-banner';
+    }
+
+    function selectAnswer(index) {
+      if (answered) return;
+      answered = true;
+
+      const q = questions[current];
+      const btns = document.querySelectorAll('.option-btn');
+      const isCorrect = index === q.correct;
+
+      btns.forEach(b => b.disabled = true);
+      btns[index].classList.add(isCorrect ? 'correct' : 'incorrect');
+      if (!isCorrect) btns[q.correct].classList.add('reveal');
+
+      if (isCorrect) {
+        score++;
+        streak++;
+        topicScores[q.topicId].correct++;
+      } else {
+        streak = 0;
+      }
+
+      const streakBanner = document.getElementById('streakBanner');
+      if (streak >= 3) {
+        streakBanner.textContent = `🔥 ${streak} in a row! Keep it up!`;
+        streakBanner.className = 'streak-banner visible';
+      } else {
+        streakBanner.className = 'streak-banner';
+      }
+
+      const expBox = document.getElementById('explanationBox');
+      document.getElementById('verdictText').textContent = isCorrect ? '✓ Correct!' : '✗ Not quite';
+      document.getElementById('explanationText').textContent = q.explanation;
+      expBox.className = `explanation-box ${isCorrect ? 'correct-box' : 'incorrect-box'} visible`;
+
+      const nextBtn = document.getElementById('nextBtn');
+      nextBtn.textContent = current + 1 < questions.length ? 'Next Question →' : 'See My Results →';
+      nextBtn.className = 'next-btn visible';
+    }
+
+    function nextQuestion() {
+      current++;
+      if (current < questions.length) {
+        renderQuestion();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        showResults();
+      }
+    }
+
+    function showResults() {
+      document.getElementById('quiz').style.display = 'none';
+      document.getElementById('results').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      const total = questions.length;
+      const pct = score / total;
+      const passed = pct >= 0.75;
+
+      const scoreEl = document.getElementById('scoreDisplay');
+      scoreEl.textContent = `${score} / ${total}`;
+      scoreEl.className = `score-display ${passed ? 'high' : 'low'}`;
+      document.getElementById('scoreSub').textContent = `${Math.round(pct * 100)}% correct`;
+
+      const scoreWrap = document.getElementById('scoreWrap');
+      if (!passed) scoreWrap.className = 'shimmer-wrap';
+
+      const messages = {
+        perfect: [
+          "Perfect score — that's a great sign. GatorPrep RE's 1,900+ Florida-specific questions will make sure that knowledge holds up under real exam pressure.",
+          "18 for 18. Seriously impressive. Download GatorPrep RE to drill every corner of the Florida exam and make sure it sticks.",
+          "A clean sweep. GatorPrep RE can help you make sure that confidence is fully earned before test day.",
+        ],
+        high: [
+          "Solid foundation! You clearly know your Florida real estate material. GatorPrep RE can help you go deeper on every topic before test day.",
+          "Nice work! You're in passing territory. GatorPrep RE can help you go deeper on every topic before exam day.",
+          "You're on the right track. GatorPrep RE can help you lock in every subject area before test day.",
+        ],
+        low: [
+          "Looks like you've got some ground to cover — that's exactly what GatorPrep RE is for. 1,900+ Florida-specific questions to get you ready.",
+          "The good news? You found your weak spots before exam day. GatorPrep RE can help you tackle every one of them.",
+          "Every expert was once a beginner. GatorPrep RE is built specifically for the Florida FREC exam — download it free and start building that knowledge base.",
+        ]
+      };
+      const pool = score === total ? messages.perfect : passed ? messages.high : messages.low;
+      document.getElementById('resultMessage').textContent = pool[Math.floor(Math.random() * pool.length)];
+
+      const breakdown = document.getElementById('topicBreakdown');
+      breakdown.innerHTML = '';
+      Object.values(topicScores).forEach(t => {
+        const row = document.createElement('div');
+        row.className = 'topic-result-row';
+        const scoreClass = t.correct === 2 ? 'perfect' : t.correct === 1 ? 'partial' : 'zero';
+        const scoreText = t.correct === 2 ? '2/2 ✓' : t.correct === 1 ? '1/2' : '0/2 — Review this';
+        row.innerHTML = `
+          <span class="topic-result-name">${t.label}</span>
+          <span class="topic-result-score ${scoreClass}">${scoreText}</span>
+        `;
+        breakdown.appendChild(row);
+      });
+
+      if (passed) {
+        setTimeout(() => {
+          confetti({ particleCount: 120, spread: 80, origin: { y: 0.5 }, colors: ['#E84B8A', '#F09040', '#00D4B8', '#4ADE80', '#F5C040', '#ffffff'] });
+          setTimeout(() => confetti({ particleCount: 80, spread: 100, origin: { y: 0.4 } }), 600);
+        }, 300);
+      }
+    }
+
+    function retakeQuiz() {
+      document.getElementById('results').style.display = 'none';
+      document.getElementById('scoreWrap').className = '';
+      startQuiz();
+    }
+  </script>
+
+</body>
+</html>
