@@ -504,7 +504,16 @@
       padding: 80px 32px;
       background: linear-gradient(135deg, #E84B8A, #F0557A, #F09040, #F5C040);
       border-top: 1px solid rgba(255,255,255,0.08);
+      position: relative;
     }
+    .gus-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(15,12,41,0.45);
+      pointer-events: none;
+    }
+    .gus-cta > * { position: relative; z-index: 1; }
     .gus-cta-emoji { font-size: 80px; margin-bottom: 20px; display: block; }
     .gus-cta h2 {
       font-size: clamp(24px, 4vw, 36px);
