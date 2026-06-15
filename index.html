@@ -374,6 +374,130 @@
     .tier-cta.pro-cta { background: #2563EB; color: #ffffff; }
     .tier-cta.premium-cta { background: #F0A020; color: #1A1A2E; }
 
+    /* ── Community section ── */
+    .community-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 72px 32px;
+    }
+    .community-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .community-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 16px;
+      padding: 28px;
+      opacity: 0;
+      transform: translateY(28px);
+      transition: border-color 0.15s, opacity 0.6s ease, transform 0.6s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .community-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .community-card:hover { border-color: rgba(240,160,32,0.35); }
+    .community-card.quote-card::before {
+      content: '\201C';
+      position: absolute;
+      top: -10px;
+      right: 16px;
+      font-size: 120px;
+      font-weight: 900;
+      color: rgba(240,160,32,0.08);
+      line-height: 1;
+      pointer-events: none;
+      font-family: Georgia, serif;
+    }
+
+    /* Desktop: slide in from sides */
+    @media (min-width: 601px) {
+      .community-card.from-left {
+        transform: translateX(-40px);
+        opacity: 0;
+      }
+      .community-card.from-right {
+        transform: translateX(40px);
+        opacity: 0;
+      }
+      .community-card.from-left.visible,
+      .community-card.from-right.visible {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      .community-card.from-right { transition-delay: 0.35s; }
+    }
+
+    /* Mobile: stack vertically, stagger float up */
+    @media (max-width: 600px) {
+      .community-grid { grid-template-columns: 1fr; }
+      .community-card.from-left,
+      .community-card.from-right {
+        transform: translateY(28px);
+        opacity: 0;
+      }
+      .community-card.from-left.visible,
+      .community-card.from-right.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .community-card.from-right { transition-delay: 0.2s; }
+    }
+
+    .quote-text {
+      font-size: 15px;
+      color: rgba(255,255,255,0.80);
+      line-height: 1.7;
+      font-style: italic;
+      flex: 1;
+    }
+    .quote-source {
+      font-size: 12px;
+      font-weight: 700;
+      color: #F0A020;
+      margin-top: 16px;
+    }
+    .community-card-inner {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .community-label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #F0A020;
+      margin-bottom: 14px;
+    }
+    .community-text {
+      font-size: 15px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.7;
+      flex: 1;
+    }
+    .community-text strong { color: #ffffff; }
+    .btn-community {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+      background: #F0A020;
+      color: #1A1A2E;
+      font-size: 14px;
+      font-weight: 800;
+      padding: 12px 22px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: opacity 0.15s;
+      align-self: flex-start;
+    }
+    .btn-community:hover { opacity: 0.85; }
+
     /* ── Gus CTA section ── */
     .gus-cta {
       text-align: center;
@@ -637,6 +761,30 @@
     </div>
   </div>
 
+  <!-- Community -->
+  <section class="community-section">
+    <div class="section-label">Community</div>
+
+    <div class="community-grid">
+
+      <div class="community-card quote-card from-left">
+        <div class="community-card-inner">
+          <p class="quote-text">The progress tracking and personalized study plan helped me see my weak areas so I could know what to focus on. I finally felt organized enough to tackle the material with some confidence. I recommend GatorPrep RE if you're feeling nervous about the exam (like I was)!</p>
+          <div class="quote-source">— r/FloridaRealEstateExam · FL exam passer</div>
+        </div>
+      </div>
+
+      <div class="community-card from-right">
+        <div class="community-card-inner">
+          <div class="community-label">Join the Community</div>
+          <p class="community-text">Join <strong>r/FloridaRealEstateExam</strong>, the Reddit community for Florida real estate exam candidates. Ask questions, share tips, and prep alongside fellow test takers.</p>
+          <a class="btn-community" href="https://www.reddit.com/r/FloridaRealEstateExam/" target="_blank" rel="noopener">Visit r/FloridaRealEstateExam →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- Gus CTA -->
   <div class="gus-cta">
     <span class="gus-cta-emoji">🐊</span>
@@ -662,6 +810,17 @@
   </footer>
 
   <script>
+    const communityCards = document.querySelectorAll('.community-card');
+    const communityObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          communityObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    communityCards.forEach(card => communityObserver.observe(card));
+
     const tierCards = document.querySelectorAll('.tier-card');
     const tierObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
