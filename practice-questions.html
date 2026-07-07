@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Florida Real Estate Practice Questions — 20 Exam-Style Questions with Answers — GatorPrep RE</title>
+  <meta name="description" content="20 free Florida real estate exam practice questions with answers and explanations — covering license law, brokerage relationships, contracts, finance, appraisal, and closing math. No email required." />
+  <meta property="og:title" content="Free Florida Real Estate Practice Questions (20 with Answers)" />
+  <meta property="og:description" content="20 real Florida exam-style questions, answers hidden until you commit. No email, no signup — just find out if you'd pass." />
+  <meta property="og:image" content="icon.png" />
+  <meta property="og:url" content="https://gatorprepre.com/practice-questions.html" />
+  <meta property="og:type" content="article" />
+  <link rel="icon" href="icon.png" />
+  <link rel="canonical" href="https://gatorprepre.com/practice-questions.html" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DJL0MXRFM2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DJL0MXRFM2');
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0F0C29;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    /* ── Nav ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 32px;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .nav-icon { width: 36px; height: 36px; border-radius: 8px; }
+    .nav-name { font-size: 18px; font-weight: 800; color: #ffffff; }
+    .nav-name span { color: #F0A020; }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #ffffff; }
+    .nav-download {
+      background: #F0A020 !important;
+      color: #1A1A2E !important;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-weight: 700 !important;
+    }
+    .nav-download:hover { background: #e09010 !important; }
+
+    /* ── Article Hero ── */
+    .article-hero {
+      background: linear-gradient(135deg, #E84B8A, #F0557A, #F09040, #F5C040);
+      padding: 72px 32px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(15,12,41,0.40);
+    }
+    .article-hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .article-eyebrow {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #FFD166;
+      background: rgba(255,209,102,0.12);
+      border: 1px solid rgba(255,209,102,0.25);
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+    .article-hero h1 {
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+    .article-hero h1 span { color: #FFD166; }
+    .article-hero-sub {
+      font-size: clamp(16px, 2.5vw, 19px);
+      color: rgba(255,255,255,0.80);
+      line-height: 1.65;
+      max-width: 580px;
+      margin: 0 auto 36px;
+    }
+    .hero-meta {
+      font-size: 13px;
+      color: rgba(255,255,255,0.40);
+    }
+
+    /* ── Big stat callout ── */
+    .stat-callout {
+      background: rgba(0,0,0,0.3);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 40px 32px;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+    }
+    .big-stat {
+      text-align: center;
+      flex: 1;
+      max-width: 220px;
+      padding: 0 28px;
+      border-right: 1px solid rgba(255,255,255,0.10);
+    }
+    .big-stat:last-child { border-right: none; }
+    .big-stat-value {
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 900;
+      color: #F0A020;
+      line-height: 1;
+    }
+    .big-stat-value.danger { color: #F87171; }
+    .big-stat-value.good { color: #4ADE80; }
+    .big-stat-label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.50);
+      margin-top: 8px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    /* ── Content layout ── */
+    .article-body {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 64px 32px 80px;
+    }
+
+    /* ── Prose ── */
+    .prose h2 {
+      font-size: clamp(22px, 3.5vw, 30px);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-top: 56px;
+      margin-bottom: 16px;
+    }
+    .prose h2 span { color: #F0A020; }
+    .prose p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.80;
+      margin-bottom: 18px;
+    }
+    .prose p strong { color: #ffffff; font-weight: 700; }
+    .prose a { color: #F0A020; }
+
+    /* ── Ordered list (retake steps) ── */
+    .prose ol {
+      margin-left: 20px;
+      margin-bottom: 18px;
+    }
+    .prose ol li {
+      font-size: 16px;
+      color: rgba(255,255,255,0.70);
+      line-height: 1.75;
+      margin-bottom: 12px;
+      padding-left: 6px;
+    }
+    .prose ol li strong { color: #ffffff; }
+
+    /* ── Section label ── */
+    .section-label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #F0A020;
+      margin-bottom: 10px;
+    }
+
+    /* ── Callout ── */
+    .callout {
+      background: rgba(240,160,32,0.08);
+      border: 1px solid rgba(240,160,32,0.20);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin: 32px 0;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .callout-icon { font-size: 24px; flex-shrink: 0; }
+    .callout p { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.70; margin: 0; }
+    .callout p strong { color: #ffffff; }
+
+    /* ── Warning callout ── */
+    .callout-warning {
+      background: rgba(232,75,138,0.08);
+      border: 1px solid rgba(232,75,138,0.22);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin: 32px 0;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .callout-warning-icon { font-size: 24px; flex-shrink: 0; }
+    .callout-warning p { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.70; margin: 0; }
+    .callout-warning p strong { color: #ffffff; }
+
+    /* ── Related guide link ── */
+    .related-guide {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 14px;
+      padding: 18px 22px;
+      margin: 32px 0;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s;
+    }
+    .related-guide:hover { border-color: rgba(240,160,32,0.35); }
+    .related-guide-icon { font-size: 24px; flex-shrink: 0; }
+    .related-guide-label {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.30);
+      margin-bottom: 4px;
+    }
+    .related-guide-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.80);
+    }
+    .related-guide-arrow {
+      margin-left: auto;
+      font-size: 18px;
+      color: #F0A020;
+      flex-shrink: 0;
+    }
+
+    /* ── CTA ── */
+    .gus-cta {
+      background: rgba(255,255,255,0.03);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+      padding: 64px 32px;
+    }
+    .gus-cta-emoji { font-size: 72px; display: block; margin-bottom: 20px; }
+    .gus-cta h2 {
+      font-size: clamp(22px, 4vw, 32px);
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+    .gus-cta p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.58);
+      max-width: 500px;
+      margin: 0 auto 28px;
+      line-height: 1.65;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: #00D4B8;
+      color: #0F0C29;
+      font-weight: 800;
+      font-size: 16px;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(0,212,184,0.35);
+    }
+    .btn-primary:hover { background: #00BFA6; box-shadow: 0 8px 28px rgba(0,212,184,0.50); }
+    .hero-note {
+      font-size: 13px;
+      color: rgba(255,255,255,0.30);
+      margin-top: 14px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: rgba(0,0,0,0.3);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 32px;
+      text-align: center;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: rgba(255,255,255,0.80); }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.25); }
+
+    @media (max-width: 600px) {
+      nav { padding: 12px 20px; }
+      .nav-links a:not(.nav-download) { display: none; }
+      .stat-callout { gap: 0; padding: 28px 16px; }
+      .big-stat { padding: 0 12px; }
+      .article-body { padding: 48px 20px 64px; }
+    }
+  
+
+    /* ── Answer callout ── */
+    .answer-banner {
+      background: rgba(240,160,32,0.12);
+      border: 1px solid rgba(240,160,32,0.30);
+      border-left: 4px solid #F0A020;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin: 40px 0 32px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .answer-banner-icon { font-size: 28px; flex-shrink: 0; }
+    .answer-banner-text { flex: 1; }
+    .answer-banner-label {
+      font-size: 11px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase;
+      color: #F0A020; margin-bottom: 6px;
+    }
+    .answer-banner-body { font-size: 16px; color: rgba(255,255,255,0.85); line-height: 1.65; }
+    .answer-banner-body strong { color: #ffffff; }
+
+    .source-note {
+      font-size: 12px !important;
+      color: rgba(255,255,255,0.28) !important;
+      margin-top: 20px !important;
+      margin-bottom: 0 !important;
+    }
+    .source-note a { color: rgba(255,255,255,0.40) !important; }
+
+
+    .q-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 16px;
+      padding: 24px 26px;
+      margin: 20px 0;
+    }
+    .q-topic {
+      display: inline-block;
+      font-size: 10px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase;
+      color: #F0A020; background: rgba(240,160,32,0.10);
+      border: 1px solid rgba(240,160,32,0.22);
+      border-radius: 20px; padding: 4px 12px; margin-bottom: 14px;
+    }
+    .q-text { font-size: 16.5px; font-weight: 700; color: #ffffff; line-height: 1.55; margin-bottom: 16px; }
+    .q-options { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; padding: 0; }
+    .q-options li {
+      font-size: 15px; color: rgba(255,255,255,0.75);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px; padding: 11px 16px; line-height: 1.5;
+    }
+    .q-options li strong { color: #F0A020; margin-right: 6px; }
+    .q-card details summary {
+      cursor: pointer; font-size: 14px; font-weight: 800; color: #F0A020;
+      list-style: none; user-select: none;
+    }
+    .q-card details summary::before { content: "▸ "; }
+    .q-card details[open] summary::before { content: "▾ "; }
+    .q-answer {
+      margin-top: 14px;
+      background: rgba(74,222,128,0.07);
+      border: 1px solid rgba(74,222,128,0.20);
+      border-radius: 12px; padding: 16px 18px;
+    }
+    .q-answer-label { font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #4ADE80; margin-bottom: 6px; }
+    .q-answer p { font-size: 14.5px; color: rgba(255,255,255,0.75); line-height: 1.65; margin: 0; }
+    .q-answer p strong { color: #ffffff; }
+  </style>
+</head>
+<body>
+
+<nav>
+    <a class="nav-brand" href="/">
+      <img class="nav-icon" src="icon.png" alt="GatorPrep RE" />
+      <span class="nav-name">GatorPrep <span>RE</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="quiz.html">Free Quiz</a>
+      <a href="guides.html">Study Guides</a>
+      <a href="support.html">Support</a>
+      <a href="https://apps.apple.com/us/app/gatorprep-re/id6778161363" class="nav-download" target="_blank">Download Free ↓</a>
+    </div>
+  </nav>
+
+  <div class="article-hero">
+    <div class="article-hero-content">
+      <div class="article-eyebrow">Practice Questions · All 9 Topics</div>
+      <h1>Free Florida Real Estate<br /><span>Practice Questions</span></h1>
+      <p class="article-hero-sub">20 exam-style questions with answers and explanations — pulled from the same bank GatorPrep RE uses, spanning all nine subject areas. No email, no signup.</p>
+      <div class="hero-meta">Florida Real Estate Sales Associate Exam · Updated July 2026</div>
+    </div>
+  </div>
+
+  <div class="stat-callout">
+    <div class="big-stat">
+      <div class="big-stat-value">20</div>
+      <div class="big-stat-label">Exam-style questions below</div>
+    </div>
+    <div class="big-stat">
+      <div class="big-stat-value">9</div>
+      <div class="big-stat-label">Subject areas covered</div>
+    </div>
+    <div class="big-stat">
+      <div class="big-stat-value">0</div>
+      <div class="big-stat-label">Signups or emails required</div>
+    </div>
+  </div>
+
+  <div class="article-body">
+    <div class="prose">
+
+      <div class="answer-banner">
+        <div class="answer-banner-icon">✍️</div>
+        <div class="answer-banner-text">
+          <div class="answer-banner-label">How to Use This Page</div>
+          <div class="answer-banner-body"><strong>Commit to an answer before you peek.</strong> The value isn't in reading questions — it's in the moment you have to choose. Pick your letter, then open the explanation. If you guessed right for the wrong reason, that counts as a miss.</div>
+        </div>
+      </div>
+
+      <p>These 20 questions mirror the real Florida exam's style: scenario-based, four options, one defensibly correct answer. They span all nine subject areas, from license law to closing computations — because the real exam will, too.</p>
+    </div>
+
+    <div class="q-card">
+      <div class="q-topic">Question 1 · License Law &amp; FREC</div>
+      <div class="q-text">Under Florida license law, when a sales associate earns compensation in a real estate transaction, they must:</div>
+      <ul class="q-options">
+        <li><strong>A.</strong> Deposit their compensation directly into an escrow account and notify FREC within 10 business days</li>
+        <li><strong>B.</strong> Receive all compensation through their employing broker -- they cannot accept payment directly from any party to the transaction</li>
+        <li><strong>C.</strong> Split the compensation with the cooperating agent before forwarding their share to the broker</li>
+        <li><strong>D.</strong> Hold the funds in their personal account for 30 days before forwarding them to the broker</li>
+      </ul>
+      <details>
+        <summary>Show answer &amp; explanation</summary>
+        <div class="q-answer">
+          <div class="q-answer-label">Answer: B</div>
+          <p>Florida law requires all compensation earned by a sales associate to flow through their employing broker. The sales associate cannot legally accept payment directly from a buyer, seller, or any other party -- even if those parties are willing to pay directly. The broker receives the compensation and then distributes the sales associate's agreed-upon share per their employment or independent contractor agreement. This rule reinforces the broker's supervisory role and ensures accountability for all transaction funds.</p>
+        </div>
+      </details>
+    </div>
+    <div class="q-card">
+      <div class="q-topic">Question 2 · License Law &amp; FREC</div>
+      <div class="q-text">A Florida real estate sales associate is convicted of grand theft from their employer -- a crime completely unrelated to any real estate transaction. FREC's response to this conviction:</div>
+      <ul class="q-options">
+        <li><strong>A.</strong> Is limited to issuing a letter of guidance since the crime was not real estate-related</li>
+        <li><strong>B.</strong> May include disciplinary action against the real estate license, since Florida law allows FREC to discipline licensees convicted of crimes involving fraud, dishonesty, or moral turpitude regardless of whether real estate was involved</li>
+        <li><strong>C.</strong> Must wait until the criminal sentence is fully served before any disciplinary proceeding can begin</li>
+        <li><strong>D.</strong> Is limited to monitoring; FREC cannot discipline a licensee for conduct committed in a personal capacity</li>
+      </ul>
+      <details>
+        <summary>Show answer &amp; explanation</summary>
+        <div class="q-answer">
+          <div class="q-answer-label">Answer: B</div>
+          <p>Florida license law allows FREC to discipline a licensee convicted of a crime involving fraud, dishonesty, breach of trust, or moral turpitude -- even if the crime had no connection to real estate. A person who demonstrates dishonesty in their personal or professional life is not considered fit to hold a license that requires public trust. Grand theft involves dishonesty and would typically qualify as grounds for FREC disciplinary action against the real estate license.</p>
+        </div>
+      </details>
+    </div>
+    <div class="q-card">
+      <div class="q-topic">Question 3 · Brokerage Relationships</div>
+      <div class="q-text">In Florida real estate terminology, a person who is working with a licensee but is NOT represented by the licensee in a brokerage relationship is called a:</div>
+      <ul class="q-options">
+        <li><strong>A.</strong> Client</li>
+        <li><strong>B.</strong> Customer</li>
+        <li><strong>C.</strong> Principal</li>
+        <li><strong>D.</strong> Prospect</li>
+      </ul>
+      <details>
+        <summary>Show answer &amp; explanation</summary>
+        <div class="q-answer">
+          <div class="q-answer-label">Answer: B</div>
+          <p>In Florida, a 'client' is a party represented by a licensee in a fiduciary or agency capacity. A 'customer' is a member of the public who receives real estate services but is not represented by the licensee. For example, a buyer working with a listing agent (who represents only the seller) is a customer of the listing agent — they receive services but no representation.</p>
+        </div>
+      </details>
+    </div>
+    <div class="q-card">
+      <div class="q-topic">Question 4 · Brokerage Relationships</div>
+      <div class="q-text">A licensed Florida broker is selling his own home without using a brokerage firm. Which disclosure is required?</div>
+      <ul class="q-options">
+        <li><strong>A.</strong> The broker must disclose in the purchase contract that the seller holds a real estate license</li>
+        <li><strong>B.</strong> The broker must advertise the property through the MLS as required by license law</li>
+        <li><strong>C.</strong> The broker must offer a commission consistent with other listings in the area</li>
+        <li><strong>D.</strong> No special disclosure is required when a licensee sells their own home</li>
+      </ul>
+      <details>
+        <summary>Show answer &amp; explanation</summary>
+        <div class="q-answer">
+          <div class="q-answer-label">Answer: A</div>
+          <p>Florida law requires that when a licensee sells their own property, the contract must disclose that the seller is a licensed real estate professional. This ensures the buyer knows they are transacting with someone who has professional training and market knowledge. The disclosure must appear in or with the purchase contract.</p>
+        </div>
+      </details>
+    </div>
+    <div class="q-card">
+      <div class="q-topic">Question 5 · Brokerage Relationships</div>
+      <div class="q-text">A sales associate acting as a transaction broker collects a $10,000 earnest money deposit from a buyer and places it in their personal bank account overnight because the brokerage's escrow account is at a different bank. This is:</div>
+      <ul class="q-options">
+        <li><strong>A.</strong> Acceptable as long as the funds are transferred to the escrow account within three business days</li>
+        <li><strong>B.</strong> Acceptable if the sales associate documents the temporary holding in writing</li>
+        <li><strong>C.</strong> A violation — funds must not be commingled with personal funds under any circumstances</li>
+        <li><strong>D.</strong> Acceptable only if the buyer consents to the arrangement in writing</li>
+      </ul>
+      <details>
+        <summary>Show answer &amp; explanation</summary>
+        <div class="q-answer">
+          <div class="q-answer-label">Answer: C</div>
+          <p>Commingling — mixing client funds with personal funds — is a serious violation of Florida license law regardless of the duration or intent. Earnest money and other client funds must be placed directly into the broker's escrow account; they cannot be held in personal accounts even temporarily. The duty to account for all funds prohibits commingling at all times.</p>
+        </div>
+      </details>
+    </div>
+    <div class="q-card">
+      <div class="q-topic">Question 6 · Brokerage Operations</div>
+      <div class="q-text">A Florida buyer's broker wants to ensure she will be compensated regardless of what property her buyer ultimately purchases. To best protect her right to compensation, she should:</div>
+      <ul class="q-options">
+        <li><strong>A.</strong> Register with the local MLS as a buyer's agent before showing any listed properties</li>
+        <li><strong>B.</strong> Obtain the seller's written agreement to pay a cooperating commission before showing each property</li>
+        <li><strong>C.</strong> Enter into a written buyer broker agreement with the buyer that establishes the broker's right to compensation</li>
+        <li><strong>D.</strong> File a commission protection notice with FREC before beginning buyer representation</li>
+      </ul>
+      <details>
+        <summary>Show answer &amp; explanation</summary>
+        <div class="q-answer">
+          <div class="q-answer-label">Answer: C</div>
+          <p>A written buyer broker agreement is a contract between the buyer and the broker that establishes the broker's right to compensation. Without such an agreement, the broker's pay depends on what a listing broker offers in the MLS or on a seller's willingness to cooperate — neither of which is guaranteed. A written buyer broker agreement is the most reliable protection for a buyer's broker's compensation.</p>
+        </div>
+      </details>
+    </div>
+    <div class="q-card">
+      <div class="q-topic">Question 7 · Brokerage Operations</div>
+      <div class="q-text">Under Florida law, a broker is generally NOT liable for the unauthorized acts of a sales associate if:</div>
+      <ul class="q-options">
+        <li><strong>A.</strong> The broker had no physical office presence when the violation occurred</li>
+        <li><strong>B.</strong> The sales associate was classified as an independent contractor rather than an employee</li>
+        <li><strong>C.</strong> The sales associate had been licensed for more than two years at the time of the violation</li>
+        <li><strong>D.</strong> The broker did not ratify or have prior knowledge of the act, and the act fell entirely outside the scope of the associate's licensed duties</li>
+      </ul>
+      <details>
+        <summary>Show answer &amp; explanation</summary>
+        <div class="q-answer">
+          <div class="q-answer-label">Answer: D</div>
+          <p>A broker is generally not liable for the truly unauthorized acts of a sales associate that fall entirely outside the scope of licensed duties — provided the broker did not authorize, ratify, or have prior knowledge of the act. However, if the broker knew or should have known about the conduct through proper supervision, liability may still attach. Independent contractor status alone does not shield the broker from supervisory liability.</p>
+        </div>
+      </details>
+    </div>
+    <div class="q-card">
+      <div class="q-topic">Question 8 · Florida &amp; Federal Laws</div>
+      <div class="q-text">A property owner instructs a Florida licensee to refuse to rent to families with children because "the units are too small for families." The licensee should:</div>
+      <ul class="q-options">
+        <li><strong>A.</strong> Follow the owner's instruction, since owners have the right to establish tenant selection criteria</li>
+        <li><strong>B.</strong> Follow the owner's instruction, since unit size is a legitimate and non-discriminatory basis for refusal</li>
+        <li><strong>C.</strong> Ask FREC for guidance before deciding how to respond to the owner's instruction</li>
+        <li><strong>D.</strong> Refuse the instruction, since discriminating based on familial status is illegal and following it would expose the licensee to personal liability</li>
+      </ul>
+      <details>
+        <summary>Show answer &amp; explanation</summary>
+        <div class="q-answer">
+          <div class="q-answer-label">Answer: D</div>
+          <p>A Florida licensee who follows an owner's instruction to discriminate based on a protected class becomes personally liable for the discriminatory act. Unit size is not a recognized exemption from the familial status prohibition — it is a pretext for discrimination. A licensee must refuse such an instruction and explain to the owner that it violates federal and Florida fair housing law. Compliance with an unlawful instruction is not a defense.</p>
+        </div>
+      </details>
+    </div>
+    <div class="q-card">
+      <div class="q-topic">Question 9 · Florida &amp; Federal Laws</div>
+      <div class="q-text">A landlord denies a rental application based in part on the applicant's credit report. Under the Fair Credit Reporting Act (FCRA), the landlord must:</div>
+      <ul class="q-options">
+        <li><strong>A.</strong> Delete the applicant's credit report from their records within 30 days of the denial</li>
+        <li><strong>B.</strong> Allow the applicant to review the full credit report before the denial is finalized</li>
+        <li><strong>C.</strong> Rescreen the applicant using a different credit bureau before the denial can stand</li>
+        <li><strong>D.</strong> Provide the applicant with an adverse action notice that includes the name and contact information of the credit reporting agency used</li>
+      </ul>
+      <details>
+        <summary>Show answer &amp; explanation</summary>
+        <div class="q-answer">
+          <div class="q-answer-label">Answer: D</div>
+          <p>The FCRA requires that when a landlord takes an adverse action — such as denying a rental application — based wholly or partly on information in a consumer credit report, they must provide the applicant with an adverse action notice. The notice must include the name, address, and phone number of the credit reporting agency that supplied the report, and advise the applicant of their right to obtain a free copy of the report and dispute inaccurate information.</p>
+        </div>
+      </details>
+    </div>
+    <div class="q-card">
+      <div class="q-topic">Question 10 · Property Rights &amp; Ownership</div>
+      <div class="q-text">A married Florida homestead owner dies without a will, survived by a spouse and two minor children. The surviving spouse wants to immediately sell the homestead. Under Florida's homestead descent laws, which of the following MOST accurately describes the situation?</div>
+      <ul class="q-options">
+        <li><strong>A.</strong> The surviving spouse may sell freely because they inherit the full homestead by intestate succession</li>
+        <li><strong>B.</strong> The property passes into a court-supervised trust for the minor children until they turn 18</li>
+        <li><strong>C.</strong> The surviving spouse must obtain a court order to remove the homestead protection before selling</li>
+        <li><strong>D.</strong> The surviving spouse receives a life estate in the homestead, with the minor children holding the vested remainder</li>
+      </ul>
+      <details>
+        <summary>Show answer &amp; explanation</summary>
+        <div class="q-answer">
+          <div class="q-answer-label">Answer: D</div>
+          <p>Under Florida Statute 732.401, when a homestead owner dies intestate (without a will) leaving both a surviving spouse and lineal descendants, the surviving spouse takes a life estate in the homestead and the descendants receive a vested remainder in fee simple. This significantly restricts the surviving spouse's ability to sell or mortgage the property without the descendants' joinder or consent — including minor children. The surviving spouse does NOT inherit fee simple title when lineal descendants survive.</p>
+        </div>
+      </details>
+    </div>
+
+    <a class="related-guide" href="quiz.html">
+      <div class="related-guide-icon">🎯</div>
+      <div>
+        <div class="related-guide-label">Related Guide</div>
+        <div class="related-guide-title">Want a score and topic breakdown? Take the free 18-question diagnostic</div>
+      </div>
+      <div class="related-guide-arrow">→</div>
+    </a>
+
+    <div class="q-card">
+      <div class="q-topic">Question 11 · Property Rights &amp; Ownership</div>
+      <div class="q-text">The Florida Department of Transportation appraises a strip of a private owner's land at $80,000 for a highway widening project. The owner believes the true value is $150,000 and refuses to accept. Which of the following best describes the owner's rights?</div>
+      <ul class="q-options">
+        <li><strong>A.</strong> The owner must accept the government's appraised value because the power to take is absolute</li>
+        <li><strong>B.</strong> The owner may refuse the taking entirely if the land is being acquired only to benefit adjacent properties</li>
+        <li><strong>C.</strong> The owner may challenge the compensation amount in a condemnation proceeding, where a court determines just compensation</li>
+        <li><strong>D.</strong> The owner may file a complaint with FREC to challenge the government's valuation</li>
+      </ul>
+      <details>
+        <summary>Show answer &amp; explanation</summary>
+        <div class="q-answer">
+          <div class="q-answer-label">Answer: C</div>
+          <p>While the government has an absolute right to take private property through eminent domain for a public purpose, the property owner has a constitutional right to receive just compensation — and the right to contest the government's determination of value. In a condemnation proceeding, the owner may present their own appraisal, and a court (or jury) will determine the fair market value. FREC has no role in eminent domain proceedings.</p>
+        </div>
+      </details>
+    </div>
+    <div class="q-card">
+      <div class="q-topic">Question 12 · Contracts &amp; Legal Descriptions</div>
+      <div class="q-text">How does a right of first refusal differ from an option contract?</div>
+      <ul class="q-options">
+        <li><strong>A.</strong> A right of first refusal allows the holder to match any third-party offer, while an option grants the right to purchase at a pre-set price</li>
+        <li><strong>B.</strong> A right of first refusal requires the holder to pay non-refundable consideration, while an option does not</li>
+        <li><strong>C.</strong> A right of first refusal must be exercised within 30 days, while an option has no expiration deadline</li>
+        <li><strong>D.</strong> A right of first refusal binds the seller to sell at any time, while an option limits the seller's obligation to a set period</li>
+      </ul>
+      <details>
+        <summary>Show answer &amp; explanation</summary>
+        <div class="q-answer">
+          <div class="q-answer-label">Answer: A</div>
+          <p>A right of first refusal gives the holder the opportunity to match any bona fide third-party offer before the owner can accept it — the price is not pre-set. An option contract, by contrast, grants the holder the right to purchase at a specific, predetermined price within a set period. Both are unilateral in that only the grantor is bound, but they operate quite differently in practice.</p>
+        </div>
+      </details>
+    </div>
+    <div class="q-card">
+      <div class="q-topic">Question 13 · Contracts &amp; Legal Descriptions</div>
+      <div class="q-text">A buyer fails to provide an updated proof of funds by the agreed deadline, but the contract does not include a 'time is of the essence' clause. The buyer provides the document two days late. Which of the following is most accurate?</div>
+      <ul class="q-options">
+        <li><strong>A.</strong> This is likely a minor breach that does not entitle the seller to immediately terminate the contract</li>
+        <li><strong>B.</strong> This is a material breach that entitles the seller to declare the buyer in default and retain the deposit</li>
+        <li><strong>C.</strong> The broker must notify FREC of the breach before the seller may take any formal action</li>
+        <li><strong>D.</strong> The buyer's late submission automatically extends the closing date by an equal number of days</li>
+      </ul>
+      <details>
+        <summary>Show answer &amp; explanation</summary>
+        <div class="q-answer">
+          <div class="q-answer-label">Answer: A</div>
+          <p>Without a 'time is of the essence' clause, missing a contractual deadline by a short period is generally treated as a minor breach, not a material breach. The non-breaching party is not automatically entitled to terminate the contract — they must give the breaching party a reasonable opportunity to cure. When 'time is of the essence' is included, deadlines become material and a breach can justify immediate termination. This distinction is frequently tested on the Florida exam.</p>
+        </div>
+      </details>
+    </div>
+    <div class="q-card">
+      <div class="q-topic">Question 14 · Contracts &amp; Legal Descriptions</div>
+      <div class="q-text">A purchase contract specifies a closing date of June 15 with a 'time is of the essence' clause. The buyer's lender delays funding, and closing occurs on June 17. The seller suffered no actual harm from the two-day delay. Which of the following is most accurate?</div>
+      <ul class="q-options">
+        <li><strong>A.</strong> The seller forfeited any right to a remedy because closing eventually occurred and no harm resulted</li>
+        <li><strong>B.</strong> The two-day delay is automatically excused because lender delays are outside the buyer's direct control</li>
+        <li><strong>C.</strong> The seller has no recourse because the closing occurred within the customary five-day grace period</li>
+        <li><strong>D.</strong> The seller had the legal right to declare the buyer in default on June 15, even though closing occurred two days later</li>
+      </ul>
+      <details>
+        <summary>Show answer &amp; explanation</summary>
+        <div class="q-answer">
+          <div class="q-answer-label">Answer: D</div>
+          <p>When a contract includes a 'time is of the essence' clause, all stated deadlines are material terms. A buyer who fails to close on the specified date is technically in breach from that moment, even if the delay is brief and even if no actual harm results. The seller could have declared the buyer in default on June 15. In practice, many sellers accommodate short delays, but the seller's legal right to declare default arose immediately when the deadline passed. This illustrates the serious consequences of the 'time is of the essence' clause.</p>
+        </div>
+      </details>
+    </div>
+    <div class="q-card">
+      <div class="q-topic">Question 15 · Finance &amp; Mortgages</div>
+      <div class="q-text">Which government agency guarantees mortgage-backed securities composed of FHA and VA loans?</div>
+      <ul class="q-options">
+        <li><strong>A.</strong> Fannie Mae (FNMA)</li>
+        <li><strong>B.</strong> Freddie Mac (FHLMC)</li>
+        <li><strong>C.</strong> Ginnie Mae (GNMA)</li>
+        <li><strong>D.</strong> The Federal Housing Finance Agency (FHFA)</li>
+      </ul>
+      <details>
+        <summary>Show answer &amp; explanation</summary>
+        <div class="q-answer">
+          <div class="q-answer-label">Answer: C</div>
+          <p>Ginnie Mae (Government National Mortgage Association, GNMA) is a government agency within HUD that guarantees mortgage-backed securities backed by FHA-insured and VA-guaranteed loans. Unlike Fannie Mae and Freddie Mac, Ginnie Mae is a true government agency — not a government-sponsored enterprise — and its guarantee carries the full faith and credit of the U.S. government.</p>
+        </div>
+      </details>
+    </div>
+    <div class="q-card">
+      <div class="q-topic">Question 16 · Finance &amp; Mortgages</div>
+      <div class="q-text">A buyer is purchasing a home in a Special Flood Hazard Area (SFHA) with a federally backed mortgage. Which of the following is required?</div>
+      <ul class="q-options">
+        <li><strong>A.</strong> The buyer must elevate the structure above the base flood elevation before the loan can close</li>
+        <li><strong>B.</strong> The buyer must obtain a flood elevation certificate and submit it to the lender</li>
+        <li><strong>C.</strong> The buyer must waive their right to flood insurance in writing before the lender can fund the loan</li>
+        <li><strong>D.</strong> The buyer must purchase flood insurance as a condition of obtaining the federally backed loan</li>
+      </ul>
+      <details>
+        <summary>Show answer &amp; explanation</summary>
+        <div class="q-answer">
+          <div class="q-answer-label">Answer: D</div>
+          <p>Federal law requires borrowers with federally backed mortgages on properties in Special Flood Hazard Areas to purchase and maintain flood insurance for the life of the loan. Standard homeowner's insurance does not cover flood damage. Flood insurance is typically obtained through the National Flood Insurance Program (NFIP) or a private insurer.</p>
+        </div>
+      </details>
+    </div>
+    <div class="q-card">
+      <div class="q-topic">Question 17 · Appraisal, Investment &amp; Markets</div>
+      <div class="q-text">Under the current Uniform Standards of Professional Appraisal Practice (USPAP), the two types of written real property appraisal reports are:</div>
+      <ul class="q-options">
+        <li><strong>A.</strong> A narrative report and a form report</li>
+        <li><strong>B.</strong> An appraisal report and a restricted appraisal report</li>
+        <li><strong>C.</strong> A summary report and a self-contained report</li>
+        <li><strong>D.</strong> A certified appraisal and a limited appraisal</li>
+      </ul>
+      <details>
+        <summary>Show answer &amp; explanation</summary>
+        <div class="q-answer">
+          <div class="q-answer-label">Answer: B</div>
+          <p>Under current USPAP, the two written report types are: (1) an Appraisal Report — provides more detail allowing the intended user to understand the basis for the appraiser's conclusions; and (2) a Restricted Appraisal Report — contains less detail and is intended only for the client (with use restricted to the client alone). The familiar FNMA Form 1004 residential appraisal form is an example of an Appraisal Report.</p>
+        </div>
+      </details>
+    </div>
+    <div class="q-card">
+      <div class="q-topic">Question 18 · Appraisal, Investment &amp; Markets</div>
+      <div class="q-text">A building has a total economic life of 60 years, an actual age of 20 years, and an effective age of 15 years. What is its remaining economic life?</div>
+      <ul class="q-options">
+        <li><strong>A.</strong> 40 years — total economic life minus actual age</li>
+        <li><strong>B.</strong> 45 years — based on a blended average of actual and effective age</li>
+        <li><strong>C.</strong> 20 years — because effective age equals the remaining life in this scenario</li>
+        <li><strong>D.</strong> 45 years — total economic life minus effective age</li>
+      </ul>
+      <details>
+        <summary>Show answer &amp; explanation</summary>
+        <div class="q-answer">
+          <div class="q-answer-label">Answer: D</div>
+          <p>Remaining economic life = Total Economic Life − Effective Age = 60 − 15 = 45 years. Remaining economic life is based on EFFECTIVE age, not actual (chronological) age. This distinction matters here: the well-maintained building with an effective age of 15 (not the chronological 20) has a remaining economic life of 45 years — 5 years more than it would if actual age were used. Effective age-based analysis rewards good maintenance in the cost approach.</p>
+        </div>
+      </details>
+    </div>
+    <div class="q-card">
+      <div class="q-topic">Question 19 · Math, Taxes &amp; Planning</div>
+      <div class="q-text">Florida's Save Our Homes (SOH) assessment cap limits annual increases in the assessed value of a homestead property to:</div>
+      <ul class="q-options">
+        <li><strong>A.</strong> 5% or the rate of inflation, whichever is greater</li>
+        <li><strong>B.</strong> 3% per year with no exception for inflation</li>
+        <li><strong>C.</strong> The lesser of 5% or the Consumer Price Index rate of inflation</li>
+        <li><strong>D.</strong> The lesser of 3% or the Consumer Price Index rate of inflation</li>
+      </ul>
+      <details>
+        <summary>Show answer &amp; explanation</summary>
+        <div class="q-answer">
+          <div class="q-answer-label">Answer: D</div>
+          <p>The Save Our Homes cap limits annual assessed value increases on homestead properties to 3% or the CPI rate of inflation — whichever is less. Over time this can cause a property's assessed value to fall well below its market value.</p>
+        </div>
+      </details>
+    </div>
+    <div class="q-card">
+      <div class="q-topic">Question 20 · Math, Taxes &amp; Planning</div>
+      <div class="q-text">Net proceeds = sale price − commission − mortgage payoff − other costs. Sale price: $400,000. Commission rate: 5.5%. Mortgage payoff: $230,000. Other seller costs: $3,000. What are the seller's net proceeds?</div>
+      <ul class="q-options">
+        <li><strong>A.</strong> $167,000</li>
+        <li><strong>B.</strong> $145,000</li>
+        <li><strong>C.</strong> $148,000</li>
+        <li><strong>D.</strong> $155,000</li>
+      </ul>
+      <details>
+        <summary>Show answer &amp; explanation</summary>
+        <div class="q-answer">
+          <div class="q-answer-label">Answer: B</div>
+          <p>Commission: $400,000 × 5.5% = $22,000. Net proceeds: $400,000 − $22,000 − $230,000 − $3,000 = $145,000.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="prose">
+      <div class="section-label">How Did You Do?</div>
+      <h2>The Real Exam Wants <span>75 out of 100</span></h2>
+      <p>Florida's pass line is 75% — stricter than most states — so 15+ out of 20 here is the pace you want, with no subject area left dark. If a topic kept tripping you, that's not bad news; that's your study plan writing itself.</p>
+      <p>For the honest topic-by-topic verdict, the <a href="quiz.html">free diagnostic quiz</a> scores you across all nine areas in about four minutes.</p>
+    </div>
+  </div>
+
+  <div class="gus-cta">
+    <span class="gus-cta-emoji">🐊</span>
+    <h2>1,900+ More Where These Came From</h2>
+    <p>Every GatorPrep RE question is Florida-specific with a full explanation — plus practice exams, flashcards, and a timed 100-question simulation.</p>
+    <a class="btn-primary" href="https://apps.apple.com/us/app/gatorprep-re/id6778161363" target="_blank">
+      ⬇ Download GatorPrep RE — Free
+    </a>
+    <p class="hero-note">Free to start · No credit card · iOS · Built for Florida DBPR</p>
+  </div>
+
+<footer>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/#features">Features</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="quiz.html">Free Quiz</a>
+      <a href="guides.html">Study Guides</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="https://apps.apple.com/us/app/gatorprep-re/id6778161363" target="_blank">App Store</a>
+    </div>
+    <div class="footer-copy">© 2026 Ivy Wisner · GatorPrep RE · Florida Real Estate Exam Prep</div>
+  </footer>
+
+</body>
+</html>
