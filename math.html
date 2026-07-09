@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Florida Real Estate Exam Math: Every Formula That Shows Up (Worked Examples) — GatorPrep RE</title>
+  <meta name="description" content="Is there math on the Florida real estate exam? Yes — about 10 of the 100 questions. Every formula Florida actually tests: commissions, prorations, doc stamps, intangible tax, mills, LTV, and cap rates — with worked examples." />
+  <meta property="og:title" content="Florida Real Estate Exam Math: Every Formula That Shows Up" />
+  <meta property="og:description" content="About 10 of the 100 questions are math — the most predictable points on the whole exam. Commissions, doc stamps, intangible tax, prorations, mills, and cap rates, each with a worked example." />
+  <meta property="og:image" content="https://gatorprepre.com/icon.png" />
+  <meta property="og:url" content="https://gatorprepre.com/math.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="GatorPrep RE" />
+  <meta property="article:published_time" content="2026-07-08T00:00:00Z" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Florida Real Estate Exam Math: Every Formula That Shows Up" />
+  <meta name="twitter:description" content="About 10 of the 100 questions are math — the most predictable points on the exam. Every tested formula with worked examples." />
+  <meta name="twitter:image" content="https://gatorprepre.com/icon.png" />
+  <link rel="icon" href="icon.png" />
+  <link rel="canonical" href="https://gatorprepre.com/math.html" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DJL0MXRFM2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DJL0MXRFM2');
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0F0C29;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    /* ── Nav ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 32px;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .nav-icon { width: 36px; height: 36px; border-radius: 8px; }
+    .nav-name { font-size: 18px; font-weight: 800; color: #ffffff; }
+    .nav-name span { color: #F0A020; }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #ffffff; }
+    .nav-download {
+      background: #F0A020 !important;
+      color: #1A1A2E !important;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-weight: 700 !important;
+    }
+    .nav-download:hover { background: #e09010 !important; }
+
+    /* ── Article Hero ── */
+    .article-hero {
+      background: linear-gradient(135deg, #E84B8A, #F0557A, #F09040, #F5C040);
+      padding: 72px 32px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(15,12,41,0.40);
+    }
+    .article-hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .article-eyebrow {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #FFD166;
+      background: rgba(255,209,102,0.12);
+      border: 1px solid rgba(255,209,102,0.25);
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+    .article-hero h1 {
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+    .article-hero h1 span { color: #FFD166; }
+    .article-hero-sub {
+      font-size: clamp(16px, 2.5vw, 19px);
+      color: rgba(255,255,255,0.80);
+      line-height: 1.65;
+      max-width: 580px;
+      margin: 0 auto 36px;
+    }
+    .hero-meta {
+      font-size: 13px;
+      color: rgba(255,255,255,0.40);
+    }
+
+    /* ── Big stat callout ── */
+    .stat-callout {
+      background: rgba(0,0,0,0.3);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 40px 32px;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+    }
+    .big-stat {
+      text-align: center;
+      flex: 1;
+      max-width: 220px;
+      padding: 0 28px;
+      border-right: 1px solid rgba(255,255,255,0.10);
+    }
+    .big-stat:last-child { border-right: none; }
+    .big-stat-value {
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 900;
+      color: #F0A020;
+      line-height: 1;
+    }
+    .big-stat-value.danger { color: #F87171; }
+    .big-stat-value.good { color: #4ADE80; }
+    .big-stat-label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.50);
+      margin-top: 8px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    /* ── Content layout ── */
+    .article-body {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 64px 32px 80px;
+    }
+
+    /* ── Prose ── */
+    .prose h2 {
+      font-size: clamp(22px, 3.5vw, 30px);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-top: 56px;
+      margin-bottom: 16px;
+    }
+    .prose h2 span { color: #F0A020; }
+    .prose p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.80;
+      margin-bottom: 18px;
+    }
+    .prose p strong { color: #ffffff; font-weight: 700; }
+    .prose a { color: #F0A020; }
+
+    /* ── Section label ── */
+    .section-label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #F0A020;
+      margin-bottom: 10px;
+    }
+
+    /* ── Formula card ── */
+    .math-section {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 32px;
+      margin: 32px 0;
+    }
+    .math-section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .math-icon {
+      font-size: 28px;
+      width: 52px;
+      height: 52px;
+      background: rgba(240,160,32,0.10);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .math-title {
+      font-size: 18px;
+      font-weight: 900;
+      color: #ffffff;
+    }
+    .math-subtitle {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      margin-top: 2px;
+      font-weight: 600;
+    }
+    .formula-box {
+      background: rgba(240,160,32,0.08);
+      border: 1px solid rgba(240,160,32,0.22);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+      font-size: 15px;
+      color: #F0A020;
+      line-height: 1.7;
+    }
+    .example-box {
+      background: rgba(255,255,255,0.04);
+      border-left: 3px solid rgba(240,160,32,0.50);
+      border-radius: 0 10px 10px 0;
+      padding: 18px 20px;
+      margin-bottom: 14px;
+    }
+    .example-label {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 10px;
+    }
+    .example-line {
+      font-size: 14px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.75;
+    }
+    .example-line strong { color: #ffffff; }
+    .example-line .result {
+      color: #F0A020;
+      font-weight: 800;
+    }
+    .math-note {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.65;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .math-note strong { color: rgba(255,255,255,0.65); }
+
+    /* ── Skip section ── */
+    .skip-section {
+      background: rgba(74,222,128,0.06);
+      border: 1px solid rgba(74,222,128,0.18);
+      border-radius: 20px;
+      padding: 32px;
+      margin: 48px 0;
+    }
+    .skip-title {
+      font-size: 18px;
+      font-weight: 900;
+      color: #4ADE80;
+      margin-bottom: 16px;
+    }
+    .skip-list { list-style: none; }
+    .skip-list li {
+      font-size: 15px;
+      color: rgba(255,255,255,0.70);
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      line-height: 1.5;
+    }
+    .skip-list li:last-child { border-bottom: none; }
+    .skip-check { color: #4ADE80; font-weight: 800; flex-shrink: 0; }
+
+    /* ── Calculator note ── */
+    .calculator-note {
+      background: rgba(96,165,250,0.07);
+      border: 1px solid rgba(96,165,250,0.20);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin: 40px 0;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .calculator-icon {
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+    .calculator-text h3 {
+      font-size: 16px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+    .calculator-text p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* ── Related guide link ── */
+    .related-guide {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 14px;
+      padding: 18px 22px;
+      margin: 32px 0;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s;
+    }
+    .related-guide:hover { border-color: rgba(240,160,32,0.35); }
+    .related-guide-icon { font-size: 24px; flex-shrink: 0; }
+    .related-guide-label {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.30);
+      margin-bottom: 4px;
+    }
+    .related-guide-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.80);
+    }
+    .related-guide-arrow {
+      margin-left: auto;
+      font-size: 18px;
+      color: #F0A020;
+      flex-shrink: 0;
+    }
+
+    /* ── CTA ── */
+    .gus-cta {
+      background: rgba(255,255,255,0.03);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+      padding: 64px 32px;
+    }
+    .gus-cta-emoji { font-size: 72px; display: block; margin-bottom: 20px; }
+    .gus-cta h2 {
+      font-size: clamp(22px, 4vw, 32px);
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+    .gus-cta p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.58);
+      max-width: 500px;
+      margin: 0 auto 28px;
+      line-height: 1.65;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: #00D4B8;
+      color: #0F0C29;
+      font-weight: 800;
+      font-size: 16px;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(0,212,184,0.35);
+    }
+    .btn-primary:hover { background: #00BFA6; box-shadow: 0 8px 28px rgba(0,212,184,0.50); }
+    .hero-note {
+      font-size: 13px;
+      color: rgba(255,255,255,0.30);
+      margin-top: 14px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: rgba(0,0,0,0.3);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 32px;
+      text-align: center;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: rgba(255,255,255,0.80); }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.25); }
+
+    @media (max-width: 600px) {
+      nav { padding: 12px 20px; }
+      .nav-links a:not(.nav-download) { display: none; }
+      .stat-callout { flex-wrap: wrap; gap: 20px; padding: 28px 16px; }
+      .big-stat { border-right: none; max-width: 100%; padding: 0 12px; }
+      .article-body { padding: 48px 20px 64px; }
+      .math-section { padding: 22px 18px; }
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Florida Real Estate Exam Math: Every Formula That Shows Up",
+  "description": "About 10 of the 100 questions on the Florida real estate sales associate exam are math. Every tested formula — commissions, prorations, documentary stamp taxes, intangible tax, mills, LTV, cap rates — with worked examples.",
+  "url": "https://gatorprepre.com/math.html",
+  "dateModified": "2026-07-08",
+  "author": {
+    "@type": "Person",
+    "name": "Ivy Wisner"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "GatorPrep RE",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gatorprepre.com/icon.png"
+    }
+  },
+  "mainEntityOfPage": "https://gatorprepre.com/math.html"
+}
+  </script>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="/">
+      <img class="nav-icon" src="icon.png" alt="GatorPrep RE" />
+      <span class="nav-name">GatorPrep <span>RE</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="quiz.html">Free Quiz</a>
+      <a href="guides.html">Study Guides</a>
+      <a href="support.html">Support</a>
+      <a href="https://apps.apple.com/us/app/gatorprep-re/id6778161363" class="nav-download" target="_blank">Download Free ↓</a>
+    </div>
+  </nav>
+
+  <!-- Article Hero -->
+  <div class="article-hero">
+    <div class="article-hero-content">
+      <div class="article-eyebrow">Math · ~10 of 100 Questions</div>
+      <h1>Florida Real Estate Exam Math: <span>The Formulas That Actually Show Up</span></h1>
+      <p class="article-hero-sub">About a tenth of the exam is arithmetic — and it's the most predictable tenth on the test. Florida reuses the same handful of formulas every time. Learn them once, and those points are yours before you sit down.</p>
+      <div class="hero-meta">Florida DBPR Sales Associate Exam · Pearson VUE · Updated July 2026</div>
+    </div>
+  </div>
+
+  <!-- Stat Bar -->
+  <div class="stat-callout">
+    <div class="big-stat">
+      <div class="big-stat-value">~10</div>
+      <div class="big-stat-label">Math questions on the exam</div>
+    </div>
+    <div class="big-stat">
+      <div class="big-stat-value">75</div>
+      <div class="big-stat-label">Points needed to pass — math can't be skipped</div>
+    </div>
+    <div class="big-stat">
+      <div class="big-stat-value good">Yes</div>
+      <div class="big-stat-label">Calculators allowed — even financial models</div>
+    </div>
+  </div>
+
+  <!-- Article Body -->
+  <div class="article-body">
+    <div class="prose">
+
+      <div class="section-label">The Short Answer</div>
+      <h2>Is There Math on the <span>Florida Real Estate Exam?</span></h2>
+
+      <p>Yes — and unlike some states, Florida doesn't tuck it away in an optional corner. Roughly <strong>10 of the 100 questions</strong> involve real estate math, woven through the closing computations, mortgage, and tax content areas. With <strong>75 correct answers needed to pass</strong>, writing off the math means starting the exam with a third of your margin for error already spent.</p>
+
+      <p>Here's the good news: Florida exam math is shallow. There's no algebra beyond one unknown, no geometry beyond a rectangle, and the same short list of formulas appears over and over. Every one of them is below, with a worked example.</p>
+
+      <div class="calculator-note">
+        <div class="calculator-icon">🧮</div>
+        <div class="calculator-text">
+          <h3>Yes, you can bring a calculator — Florida is generous about it</h3>
+          <p>Pearson VUE allows silent, hand-held, battery-operated, nonprinting calculators without an alphabetic keypad — and financial models like the HP-12C and TI BA series are <strong>explicitly permitted</strong>. That's friendlier than most states. No phones, no PDAs, nothing that stores text.</p>
+        </div>
+      </div>
+
+      <div class="section-label">The Formulas</div>
+      <h2>The <span>Money Math</span></h2>
+
+      <!-- Commission -->
+      <div class="math-section">
+        <div class="math-section-header">
+          <div class="math-icon">💰</div>
+          <div>
+            <div class="math-title">Sales Commissions</div>
+            <div class="math-subtitle">The most reliably tested calculation on the exam</div>
+          </div>
+        </div>
+        <div class="formula-box">
+          Total commission = Sale price × Commission rate<br />
+          Each split = Previous amount × Split percentage
+        </div>
+        <div class="example-box">
+          <div class="example-label">Worked Example</div>
+          <div class="example-line">A home sells for <strong>$400,000</strong> at a <strong>6% commission</strong>.</div>
+          <div class="example-line">Total commission = $400,000 × 0.06 = <span class="result">$24,000</span></div>
+          <div class="example-line">Split 50/50 between listing and selling brokers:</div>
+          <div class="example-line">Each brokerage = $24,000 ÷ 2 = <span class="result">$12,000</span></div>
+          <div class="example-line">The sales associate is on a 60/40 split with their broker:</div>
+          <div class="example-line">Associate's share = $12,000 × 0.60 = <span class="result">$7,200</span></div>
+        </div>
+        <div class="math-note">The exam runs this in every direction — sometimes you're given the associate's check and asked to work backwards to the sale price. Same formula, solved for a different piece. Practice both directions.</div>
+      </div>
+
+      <!-- Profit / Loss -->
+      <div class="math-section">
+        <div class="math-section-header">
+          <div class="math-icon">📈</div>
+          <div>
+            <div class="math-title">Percent of Profit or Loss</div>
+            <div class="math-subtitle">Straight off the official syllabus — profit over cost, always</div>
+          </div>
+        </div>
+        <div class="formula-box">
+          Percent of profit = Profit ÷ Original cost<br />
+          (Loss works the same way: Loss ÷ Original cost)
+        </div>
+        <div class="example-box">
+          <div class="example-label">Worked Example</div>
+          <div class="example-line">An investor buys a lot for <strong>$250,000</strong> and sells it for <strong>$290,000</strong>.</div>
+          <div class="example-line">Profit = $290,000 − $250,000 = <strong>$40,000</strong></div>
+          <div class="example-line">Percent of profit = $40,000 ÷ $250,000 = <span class="result">16%</span></div>
+        </div>
+        <div class="math-note"><strong>The classic trap:</strong> dividing by the sale price instead of the original cost. Percent of profit is always measured against what was <strong>paid</strong>, not what it sold for — and the wrong-divisor answer is always sitting right there among the choices.</div>
+      </div>
+
+      <div class="section-label">Closing Table Math</div>
+      <h2>Prorations &amp; <span>Florida's Transfer Taxes</span></h2>
+
+      <!-- Prorations -->
+      <div class="math-section">
+        <div class="math-section-header">
+          <div class="math-icon">📅</div>
+          <div>
+            <div class="math-title">Prorations</div>
+            <div class="math-subtitle">Splitting taxes, rent, or interest between buyer and seller</div>
+          </div>
+        </div>
+        <div class="formula-box">
+          Daily rate = Annual amount ÷ Number of days in the year<br />
+          Share owed = Daily rate × Days of ownership
+        </div>
+        <div class="example-box">
+          <div class="example-label">Worked Example (365-day method)</div>
+          <div class="example-line">Annual property taxes are <strong>$3,650</strong>. Closing is <strong>June 15</strong>, and the question makes the seller responsible through the day before closing.</div>
+          <div class="example-line">Daily rate = $3,650 ÷ 365 = <strong>$10/day</strong></div>
+          <div class="example-line">Seller's days: Jan 1 – June 14 = 151 + 14 = <strong>165 days</strong></div>
+          <div class="example-line">Seller's share = 165 × $10 = <span class="result">$1,650 — debit seller, credit buyer</span></div>
+        </div>
+        <div class="math-note">Florida property taxes are paid <strong>in arrears</strong> — the seller has been living in the house all year without paying yet, which is why the buyer gets the credit. Questions specify the calendar method (<strong>365-day</strong> or <strong>360-day</strong>) and who owns closing day — follow whatever the question says, and the arithmetic is the easy part.</div>
+      </div>
+
+      <!-- Transfer taxes -->
+      <div class="math-section">
+        <div class="math-section-header">
+          <div class="math-icon">🏛️</div>
+          <div>
+            <div class="math-title">Documentary Stamp Taxes &amp; Intangible Tax</div>
+            <div class="math-subtitle">The most Florida-specific math on the exam — national prep skips this entirely</div>
+          </div>
+        </div>
+        <div class="formula-box">
+          Doc stamps on the DEED = (Sale price ÷ 100) × $0.70<br />
+          Doc stamps on the NOTE = (Loan amount ÷ 100) × $0.35<br />
+          Intangible tax on a NEW MORTGAGE = Loan amount × 0.002
+        </div>
+        <div class="example-box">
+          <div class="example-label">Worked Example</div>
+          <div class="example-line">A home sells for <strong>$300,000</strong> with a new <strong>$240,000</strong> mortgage.</div>
+          <div class="example-line">Deed stamps = ($300,000 ÷ 100) × $0.70 = <span class="result">$2,100</span></div>
+          <div class="example-line">Note stamps = ($240,000 ÷ 100) × $0.35 = <span class="result">$840</span></div>
+          <div class="example-line">Intangible tax = $240,000 × 0.002 = <span class="result">$480</span></div>
+        </div>
+        <div class="math-note">Three separate taxes, three separate bases — the state literally taxes the paperwork twice and the borrowing once. Details worth knowing: consideration is rounded <strong>up</strong> to the next $100 before computing stamps; <strong>Miami-Dade County</strong> taxes deeds on single-family homes at $0.60 per $100 instead; the intangible tax (2 mills) applies only to <strong>new</strong> mortgages, not assumed ones. Customarily the seller pays the deed stamps and the buyer pays the note stamps and intangible tax — but it's negotiable, and the question will tell you the split when it matters.</div>
+      </div>
+
+      <a class="related-guide" href="cost.html">
+        <div class="related-guide-icon">💵</div>
+        <div>
+          <div class="related-guide-label">Related Guide</div>
+          <div class="related-guide-title">How Much Does a Florida Real Estate License Actually Cost?</div>
+        </div>
+        <div class="related-guide-arrow">→</div>
+      </a>
+
+      <div class="section-label">Tax &amp; Mortgage Math</div>
+      <h2>Mills, LTV &amp; <span>Interest</span></h2>
+
+      <!-- Property tax / mills -->
+      <div class="math-section">
+        <div class="math-section-header">
+          <div class="math-icon">🏠</div>
+          <div>
+            <div class="math-title">Property Taxes &amp; Mills</div>
+            <div class="math-subtitle">One mill = $1 of tax per $1,000 of taxable value</div>
+          </div>
+        </div>
+        <div class="formula-box">
+          Taxable value = Assessed value − Exemptions<br />
+          Annual tax = Taxable value × (Mills ÷ 1,000)
+        </div>
+        <div class="example-box">
+          <div class="example-label">Worked Example</div>
+          <div class="example-line">A home is assessed at <strong>$150,000</strong> with a <strong>$25,000 homestead exemption</strong>. The millage rate is <strong>22 mills</strong>.</div>
+          <div class="example-line">Taxable value = $150,000 − $25,000 = <strong>$125,000</strong></div>
+          <div class="example-line">Annual tax = $125,000 × 0.022 = <span class="result">$2,750</span></div>
+        </div>
+        <div class="math-note">Florida's homestead exemption is really <strong>two stacked $25,000 exemptions</strong>: the first applies to all levies, and the second (on assessed value between $50,000 and $75,000) applies to everything <strong>except school district taxes</strong>. Exam questions keep it simple by handing you the exemption amount and millage to use — your job is the subtraction and the multiplication.</div>
+      </div>
+
+      <!-- LTV + interest -->
+      <div class="math-section">
+        <div class="math-section-header">
+          <div class="math-icon">🏦</div>
+          <div>
+            <div class="math-title">Loan-to-Value &amp; Simple Interest</div>
+            <div class="math-subtitle">The two mortgage calculations Florida actually asks</div>
+          </div>
+        </div>
+        <div class="formula-box">
+          LTV = Loan amount ÷ Property value<br />
+          Annual interest = Loan balance × Interest rate<br />
+          Monthly interest = Annual interest ÷ 12
+        </div>
+        <div class="example-box">
+          <div class="example-label">Worked Example</div>
+          <div class="example-line">A buyer purchases a <strong>$280,000</strong> home with <strong>$56,000 down</strong>, borrowing the rest at <strong>6%</strong>.</div>
+          <div class="example-line">Loan = $280,000 − $56,000 = <strong>$224,000</strong></div>
+          <div class="example-line">LTV = $224,000 ÷ $280,000 = <span class="result">80%</span></div>
+          <div class="example-line">Annual interest = $224,000 × 0.06 = <strong>$13,440</strong></div>
+          <div class="example-line">First month's interest = $13,440 ÷ 12 = <span class="result">$1,120</span></div>
+        </div>
+        <div class="math-note">Interest questions on the exam use the <strong>current loan balance</strong>, not the original purchase price. And remember the down payment and LTV are two halves of the same whole — 20% down means 80% LTV, every time.</div>
+      </div>
+
+      <div class="section-label">Investor Math</div>
+      <h2>Cap Rates &amp; <span>Property Value</span></h2>
+
+      <!-- Income approach -->
+      <div class="math-section">
+        <div class="math-section-header">
+          <div class="math-icon">📊</div>
+          <div>
+            <div class="math-title">Income Approach — IRV</div>
+            <div class="math-subtitle">Income ÷ Rate = Value. Cover the one you need.</div>
+          </div>
+        </div>
+        <div class="formula-box">
+          Value = NOI ÷ Cap rate<br />
+          Cap rate = NOI ÷ Value<br />
+          NOI = Value × Cap rate
+        </div>
+        <div class="example-box">
+          <div class="example-label">Worked Example</div>
+          <div class="example-line">A duplex produces a net operating income of <strong>$24,000/year</strong>. Similar properties sell at an <strong>8% cap rate</strong>.</div>
+          <div class="example-line">Value = $24,000 ÷ 0.08 = <span class="result">$300,000</span></div>
+        </div>
+        <div class="math-note">NOI means income <strong>after</strong> operating expenses but <strong>before</strong> mortgage payments — if a question hands you gross income and expenses, subtract first. Debt service never belongs in NOI.</div>
+      </div>
+
+      <!-- Area -->
+      <div class="math-section">
+        <div class="math-section-header">
+          <div class="math-icon">📐</div>
+          <div>
+            <div class="math-title">Area &amp; Acreage</div>
+            <div class="math-subtitle">One number to memorize cold: 43,560</div>
+          </div>
+        </div>
+        <div class="formula-box">
+          Area = Length × Width<br />
+          1 acre = 43,560 square feet<br />
+          Acres = Square feet ÷ 43,560
+        </div>
+        <div class="example-box">
+          <div class="example-label">Worked Example</div>
+          <div class="example-line">A rectangular lot measures <strong>150 ft × 200 ft</strong>.</div>
+          <div class="example-line">Area = 150 × 200 = <strong>30,000 sq ft</strong></div>
+          <div class="example-line">In acres: 30,000 ÷ 43,560 = <span class="result">≈ 0.69 acres</span></div>
+        </div>
+        <div class="math-note">If a price is quoted per square foot or per acre, convert to the matching unit <strong>before</strong> multiplying. That single step is where most area questions are lost.</div>
+      </div>
+
+      <!-- Skip section -->
+      <div class="skip-section">
+        <div class="skip-title">✓ What You Can Stop Worrying About</div>
+        <ul class="skip-list">
+          <li><span class="skip-check">✓</span> Building amortization schedules by hand — never asked</li>
+          <li><span class="skip-check">✓</span> Geometry beyond rectangles and simple unit conversion</li>
+          <li><span class="skip-check">✓</span> Algebra beyond solving for one unknown in a formula you already know</li>
+          <li><span class="skip-check">✓</span> Memorizing Closing Disclosure line numbers — know debits vs. credits conceptually instead</li>
+          <li><span class="skip-check">✓</span> Mortgage payment factors from memory — when a question needs one, it's provided</li>
+        </ul>
+      </div>
+
+      <div class="section-label">Strategy</div>
+      <h2>How to <span>Study the Math</span></h2>
+
+      <p>Almost every formula above is the same shape: <strong>Part = Total × Rate</strong>. Commission is price × rate. Interest is balance × rate. Property tax is value × rate. Doc stamps are consideration × rate. Once that clicks, you're not memorizing ten formulas — you're memorizing one shape and a handful of Florida-specific rates.</p>
+
+      <p>Then drill in both directions. The exam's favorite move is handing you the answer and asking for an ingredient: here's the commission check, what was the sale price? Here's the tax bill, what's the millage? If you can only run a formula forward, you only know half of it.</p>
+
+      <p>And don't cram this the night before. Ten questions' worth of predictable, mechanical points is a gift — most of the exam tests judgment and recall, but the math is the one section where a few hours of practice converts directly into guaranteed score.</p>
+
+      <a class="related-guide" href="practice-questions.html">
+        <div class="related-guide-icon">✍️</div>
+        <div>
+          <div class="related-guide-label">Related Guide</div>
+          <div class="related-guide-title">Free Florida Real Estate Practice Questions (20 with Answers)</div>
+        </div>
+        <div class="related-guide-arrow">→</div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="gus-cta">
+    <span class="gus-cta-emoji">🐊</span>
+    <h2>Make the Math Automatic</h2>
+    <p>1,900+ Florida-specific practice questions — including every math type on this page, with step-by-step solutions in every explanation.</p>
+    <a class="btn-primary" href="https://apps.apple.com/us/app/gatorprep-re/id6778161363" target="_blank">
+      ⬇ Download GatorPrep RE — Free
+    </a>
+    <p class="hero-note">Free to start · No credit card · iOS · Built for Florida DBPR</p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/#features">Features</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="quiz.html">Free Quiz</a>
+      <a href="guides.html">Study Guides</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="https://apps.apple.com/us/app/gatorprep-re/id6778161363" target="_blank">App Store</a>
+    </div>
+    <div class="footer-copy">© 2026 Ivy Wisner · GatorPrep RE · Florida Real Estate Exam Prep</div>
+  </footer>
+
+</body>
+</html>
