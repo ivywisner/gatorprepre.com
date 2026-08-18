@@ -224,11 +224,26 @@
       box-shadow: 0 12px 40px rgba(0,0,0,0.25);
     }
     .guide-card-top {
-      background: linear-gradient(135deg, #2A1060, #B64883, #F17B65, #FFA640);
+      background: linear-gradient(135deg, #2A1060, #B64883); /* fallback */
       padding: 28px 28px 24px;
       position: relative;
       overflow: hidden;
     }
+    .guides-grid .guide-card:nth-child(1) .guide-card-top { background: linear-gradient(135deg, #FB9A4A, #FFA640); }
+    .guides-grid .guide-card:nth-child(1) .guide-tag { color: #ffffff; background: rgba(42,16,96,0.55); border-color: rgba(42,16,96,0.65); }
+    .guides-grid .guide-card:nth-child(2) .guide-card-top { background: linear-gradient(135deg, #DC6870, #EC7668); }
+    .guides-grid .guide-card:nth-child(3) .guide-card-top { background: linear-gradient(135deg, #9D3E7D, #BB4D80); }
+    .guides-grid .guide-card:nth-child(4) .guide-card-top { background: linear-gradient(135deg, #F78F54, #FB9A4A); }
+    .guides-grid .guide-card:nth-child(4) .guide-tag { color: #ffffff; background: rgba(42,16,96,0.55); border-color: rgba(42,16,96,0.65); }
+    .guides-grid .guide-card:nth-child(5) .guide-card-top { background: linear-gradient(135deg, #501F6A, #762F73); }
+    .guides-grid .guide-card:nth-child(6) .guide-card-top { background: linear-gradient(135deg, #EC7668, #F4835E); }
+    .guides-grid .guide-card:nth-child(6) .guide-tag { color: #ffffff; background: rgba(42,16,96,0.55); border-color: rgba(42,16,96,0.65); }
+    .guides-grid .guide-card:nth-child(7) .guide-card-top { background: linear-gradient(135deg, #BB4D80, #CB5B78); }
+    .guides-grid .guide-card:nth-child(8) .guide-card-top { background: linear-gradient(135deg, #2A1060, #501F6A); }
+    .guides-grid .guide-card:nth-child(9) .guide-card-top { background: linear-gradient(135deg, #762F73, #9D3E7D); }
+    .guides-grid .guide-card:nth-child(10) .guide-card-top { background: linear-gradient(135deg, #F4835E, #F78F54); }
+    .guides-grid .guide-card:nth-child(10) .guide-tag { color: #ffffff; background: rgba(42,16,96,0.55); border-color: rgba(42,16,96,0.65); }
+    .guides-grid .guide-card:nth-child(11) .guide-card-top { background: linear-gradient(135deg, #CB5B78, #DC6870); }
     .guide-card-top-content { position: relative; z-index: 1; }
     .guide-tag {
       display: inline-block;
