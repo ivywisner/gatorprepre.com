@@ -46,7 +46,7 @@
     }
     .nav-icon { width: 32px; height: 32px; border-radius: 7px; }
     .nav-name { font-size: 17px; font-weight: 800; color: #ffffff; }
-    .nav-name span { color: #F0A020; }
+    .nav-name span { color: #FFA640; }
     .nav-back {
       color: rgba(255,255,255,0.55);
       text-decoration: none;
@@ -75,7 +75,7 @@
       line-height: 1.15;
       margin-bottom: 14px;
     }
-    #intro h1 span { color: #F0A020; }
+    #intro h1 span { color: #FFA640; }
     #intro p {
       font-size: 16px;
       color: rgba(255,255,255,0.65);
@@ -111,7 +111,7 @@
     }
     .progress-bar-fill {
       height: 100%;
-      background: linear-gradient(90deg, #E84B8A, #F09040, #00D4B8);
+      background: linear-gradient(90deg, #B64883, #F17B65, #FFA640);
       border-radius: 4px;
       transition: width 0.4s ease;
     }
@@ -126,7 +126,7 @@
     /* Streak banner */
     .streak-banner {
       display: none;
-      background: linear-gradient(135deg, #E84B8A, #F0557A);
+      background: linear-gradient(135deg, #F17B65, #FFA640);
       border-radius: 12px;
       padding: 10px 18px;
       margin-bottom: 20px;
@@ -149,9 +149,9 @@
       font-weight: 700;
       letter-spacing: 0.8px;
       text-transform: uppercase;
-      color: #00D4B8;
-      background: rgba(0,212,184,0.12);
-      border: 1px solid rgba(0,212,184,0.25);
+      color: #FFA640;
+      background: rgba(255,166,64,0.12);
+      border: 1px solid rgba(255,166,64,0.25);
       border-radius: 20px;
       padding: 4px 12px;
       margin-bottom: 16px;
@@ -234,7 +234,7 @@
 
     .next-btn {
       width: 100%;
-      background: #F0A020;
+      background: #FFA640;
       color: #1A1A2E;
       font-size: 16px;
       font-weight: 800;
@@ -265,14 +265,14 @@
       padding: 26px 22px 18px;
       margin-bottom: 18px;
       background: linear-gradient(160deg, #241d4f 0%, #1a1440 55%, #251243 100%);
-      border: 1px solid rgba(240,160,32,0.35);
+      border: 1px solid rgba(255,166,64,0.35);
       box-shadow: 0 10px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06);
       overflow: hidden;
     }
     .scorecard::before {
       content: "";
       position: absolute; inset: 0;
-      background: radial-gradient(circle at 50% -20%, rgba(240,160,32,0.18), transparent 60%);
+      background: radial-gradient(circle at 50% -20%, rgba(255,166,64,0.18), transparent 60%);
       pointer-events: none;
     }
     /* holo glint — one light sweep across the card after the score lands */
@@ -317,7 +317,7 @@
       position: relative;
     }
     .score-display.high { color: #4ADE80; }
-    .score-display.low { color: #F0A020; }
+    .score-display.low { color: #FFA640; }
     .score-sub {
       font-size: 15px;
       color: rgba(255,255,255,0.55);
@@ -416,8 +416,8 @@
       color: #4ADE80;
     }
     .topic-result-score.partial {
-      background: rgba(240,160,32,0.15);
-      color: #F0A020;
+      background: rgba(255,166,64,0.15);
+      color: #FFA640;
     }
     .topic-result-score.zero {
       background: rgba(248,113,113,0.15);
@@ -425,18 +425,12 @@
     }
 
     .cta-section {
-      background: linear-gradient(135deg, #E84B8A, #F0557A, #F09040, #F5C040);
+      background: linear-gradient(135deg, #2A1060, #B64883, #F17B65, #FFA640);
       border-radius: 20px;
       padding: 28px 24px;
       margin-bottom: 16px;
       position: relative;
       overflow: hidden;
-    }
-    .cta-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(15,12,41,0.20);
     }
     .cta-section > * { position: relative; z-index: 1; }
     .cta-section h3 {
@@ -453,10 +447,11 @@
     }
     .cta-btn {
       display: block;
-      background: #00D4B8;
+      background: #FFD166;
       color: #1A1A2E;
       font-size: 16px;
       font-weight: 800;
+      box-shadow: 0 4px 20px rgba(255,209,102,0.45);
       padding: 15px 28px;
       border-radius: 12px;
       text-decoration: none;
@@ -479,7 +474,7 @@
     /* ── Shared button ── */
     .start-btn {
       display: inline-block;
-      background: #F0A020;
+      background: #FFA640;
       color: #1A1A2E;
       font-size: 17px;
       font-weight: 800;
@@ -488,7 +483,7 @@
       border: none;
       cursor: pointer;
       transition: opacity 0.15s, transform 0.1s;
-      box-shadow: 0 4px 20px rgba(240,160,32,0.35);
+      box-shadow: 0 4px 20px rgba(255,166,64,0.35);
     }
     .start-btn:hover { opacity: 0.88; transform: translateY(-2px); }
 
