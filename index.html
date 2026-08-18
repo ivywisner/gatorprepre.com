@@ -251,6 +251,94 @@
       line-height: 1.6;
     }
 
+    /* ── Reviews ── */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .review-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(28px);
+      transition: transform 0.15s, border-color 0.15s, opacity 0.6s ease, transform 0.6s ease;
+    }
+    .review-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .review-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(240,160,32,0.35);
+    }
+    .review-card::before {
+      content: '\201C';
+      position: absolute;
+      top: -10px;
+      right: 16px;
+      font-size: 120px;
+      font-weight: 900;
+      color: rgba(240,160,32,0.08);
+      line-height: 1;
+      pointer-events: none;
+      font-family: Georgia, serif;
+    }
+    .review-stars {
+      font-size: 18px;
+      color: #F0A020;
+      letter-spacing: 2px;
+    }
+    .review-headline {
+      font-size: 15px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.4;
+    }
+    .review-body {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+      flex: 1;
+    }
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .review-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #E84B8A, #F5C040);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 800;
+      color: #ffffff;
+      flex-shrink: 0;
+    }
+    .review-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+    .review-passed {
+      font-size: 12px;
+      font-weight: 700;
+      color: #4ADE80;
+      margin-top: 2px;
+    }
+
     /* ── FAQ ── */
     .faq-section { background: rgba(255,255,255,0.02); }
     .faq-section > div {
@@ -877,6 +965,55 @@
     </div>
   </section>
 
+  <!-- Reviews -->
+  <section id="reviews">
+    <div class="section-label">Student Results</div>
+    <h2>Real Students. <span>Real Results.</span></h2>
+    <p>From people who used GatorPrep RE to pass the Florida real estate exam.</p>
+    <div class="reviews-grid">
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-headline">"This Made Studying So Much Easier"</div>
+        <div class="review-body">I spent so much time re-reading my textbook, but I felt like the material wasn't sticking. Then I saw people talking about GatorPrep RE on Reddit, so I decided to give it a try. And I'm so glad that I did! I was finally able to focus on the topics that I struggled on with their topics quizzes, and it made a huge difference. Totally recommend it!</div>
+        <div class="review-author">
+          <div class="review-avatar">NK</div>
+          <div>
+            <div class="review-name">Natasha K.</div>
+            <div class="review-passed">✓ Passed</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-headline">"I PASSED! FINALLY!!!"</div>
+        <div class="review-body">It was such a grind to prepare for the exam… and I think I was focusing on the wrong study tools at first. I kept failing the Florida exam by just a few points, here and there. Honestly I felt like giving up on real estate until I found this app. But GatorPrep RE helped me FINALLY understand the topics where I was struggling. FINALLY PASSED!</div>
+        <div class="review-author">
+          <div class="review-avatar">GS</div>
+          <div>
+            <div class="review-name">Gabriel S.</div>
+            <div class="review-passed">✓ Passed</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-headline">"Best Florida Study App"</div>
+        <div class="review-body">Thank goodness I found this app. I kept seeing horror stories online of people failing the exam, and I was worried I wasn't gonna be able to pass my first time. But someone recommended that I take practice tests, and the ones on GatorPrep RE ended up being super close to what I saw on the real exam. Helped me pass my first try!</div>
+        <div class="review-author">
+          <div class="review-avatar">SD</div>
+          <div>
+            <div class="review-name">Sylvia D.</div>
+            <div class="review-passed">✓ Passed</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- FAQ -->
   <div class="faq-section">
     <div id="faq">
@@ -1080,6 +1217,19 @@
   </footer>
 
   <script>
+    // Review cards — staggered float in
+    const reviewCards = document.querySelectorAll('.review-card');
+    const reviewObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const index = Array.from(reviewCards).indexOf(entry.target);
+          setTimeout(() => entry.target.classList.add('visible'), index * 150);
+          reviewObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    reviewCards.forEach(card => reviewObserver.observe(card));
+
     const communityCards = document.querySelectorAll('.community-card');
     const communityObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
